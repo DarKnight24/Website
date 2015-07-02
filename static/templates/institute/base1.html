@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="iit bhu, itbhu,bhu, indian institute of technology bhu, iit varanasi,banaras hindu university" />
+    <meta name="author" content="">
+    <meta http-equiv="description" content="Official Website Of Indian Institute of Technology ( Banaras Hindu University ), Varanasi -India">
+    <title>{% block title %} {% endblock %}</title>
+	
+	<!-- core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/responsive.css" rel="stylesheet">
+    <link href="/static/css/scrollbar.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        {% if Department.dept_contact %}
+                            <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.dept_contact }}</p></div>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                            <div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                           </div>
+                           <div class="login">
+                                <li><a href="#">Login (CAS)</a></li>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/images/logo.jpg" alt="logo" width="250px"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        {% block home %}{% endblock %}<a href="/department/CS">Home</a></li>
+                        {% block institute %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Institute<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://www.iitbhu.ac.in/institute/index.html">Administration</a></li>
+                                <li><a href="{% url 'board_of_governors' %}">Board of Governors</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/various_committees.html">Committees</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/administrativeoffice.html">Administrative Office</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/pastdirector.html">Directors' &amp; Deans</a><li>
+                                <li><a href="http://www.iitbhu.ac.in/antiragging/">Anti Ragging</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/rti/">RTI</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/calendar.html">Calendar</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/circulars.html">Circulars</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/institute/circulars.html">Notifications</a></li>
+                            </ul>
+                        </li>
+                        {% block academics %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics<b class="caret"></b></a>
+                            <ul class="dropdown-menu multi-column columns-3">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <ul class="multi-column-dropdown">
+                                            <li>Science Departments</li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Chemistry</a></li>
+                                            <li><a href="#">Physics</a></li>
+                                            <li><a href="#">Mathematical Sciences</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <ul class="multi-column-dropdown">
+                                            <li>Engineering Departments</li>
+                                            <li class="divider"></li>
+                                            <li><a href="/department/CR">Ceramic Engg. </a></li>
+                                            <li><a href="/department/CH">Chemical Engg.</a></li>
+                                            <li><a href="/department/CE">Civil Engg.</a></li>
+                                            <li><a href="/department/CS">Computer Engg.</a></li>
+                                            <li><a href="/department/EE">Electrical Engg.</a></li>
+                                            <li><a href="/department/EC">Electronics Engg. </a></li>
+                                            <li><a href="/department/ME">Mechanical Engg.</a></li>
+                                            <li><a href="/department/MT">Metallurgical Engg.</a></li>
+                                            <li><a href="/department/MN">Mining Engg.</a></li>
+                                            <li><a href="/department/PH"> Pharmaceutics</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <ul class="multi-column-dropdown">
+                                            <li>Schools</li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">Bio-Chemical Engg.</a></li>
+                                            <li><a href="#">Bio-Medical Engg.</a></li>
+                                            <li><a href="#">Material Sc. &amp; Tech.</a></li>
+                                    </div>
+                                </div>
+                            </ul>
+                        </li>
+                        {% block admissions %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admissions<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://jeeadv.iitkgp.ac.in/">JEE(Advanced)</a></li>
+                                <li><a href="http://iitbhu.ac.in/newadmission/index.html">New Entrants</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission.html">Admission</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/fee_structure.html">Fee Structure</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/academic-programmes.html">Academic Programmes</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/ordinances.html">Ordinances</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/scholarship.html">Scholarship</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/admissions/index.php/convocation.html">Convocation</a></li>
+                            </ul>
+                        </li>
+                        {% block central %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Central Units<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://www.iitbhu.ac.in/library">Library</a></li>
+                                <li><a href="http://www.iitbhu.ac.in/tpo">Training &amp; Placement</a></li>
+                                <li><a href="http://iitbhu.ac.in/mainworkshop/it_main_workshop/">Main Workshop</a></li>
+                                <li><a href="http://iitbhu.ac.in/mciie/">MCIIE</a></li>
+                                <li><a href="http://iitbhu.ac.in/wmes_web/">WMES</a></li>
+                            </ul>                        
+                        </li>
+                        {% block news %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Teaching</a></li>
+                                <li><a href="pricing.html">Research</a></li>
+                                <li><a href="404.html">Students</a></li>
+                                <li><a href="shortcodes.html">Tender</a></li>
+                            </ul>
+                        </li>
+                        {% block alumni %}{% endblock %}<a href="http://www.iitbhu.ac.in/alumni">Alumni</a></li>
+                        {% block tender %}{% endblock %}<a href="http://www.iitbhu.ac.in/alumni">Tenders</a></li>
+                        {% block contact %}{% endblock %}<a href="http://www.iitbhu.ac.in/institute/contactus.html">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+
+    <section id="blog" class="container">
+        <div class="center" style="padding-bottom: 10px;">
+            <h2 align="left">{% block heading %}{% endblock %}</h2>
+        </div>
+        <div class="blog">
+            <div class="border-top">
+                <div class="row" style="padding-left:15px;">
+                    <div class="col-sm-13 wow fadeInDown">
+                        {% block body %}
+                        {% endblock %}
+                        
+                        {% block table %}
+                        {% endblock %}
+                    </div><!--/.col-sm-13-->
+                </div><!--/.row-->
+            </div><!--/.border-top-->
+         </div><!--/.blog-->
+    </section><!--/#blog-->
+
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Important</h3>
+                        <ul>
+                            <li><a href="http://www.iitbhu.ac.in/admissions/index.php/ordinances.html"> UG & PG Ordinance</a></li>
+                            <li><a href="http://iitbhu.ac.in/iitnotifications/Rolling%20Advertishment%20-%2011.3.13.pdf"> Rolling Advt. for Faculty</a></li>
+                            <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission/phd.html"> PG Admissions 2015-16</a></li>
+                            <li><a href="http://jeeadv.iitd.ac.in/">JEE(Advanced)</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                         <h3>Explore</h3>
+                        <ul>
+                            <li><a href="http://www.bhu.ac.in/proctor_office/" >Proctor Office</a></li>
+                            <li><a href="http://www.imsbhu.nic.in/hospital/index.htm" >Health Center</a></li>
+                            <li><a href="http://www.bhu.ac.in/bhulibrary/index.html">Central Library</a></li>
+                            <li><a href="http://www.bhu.ac.in/">BHU HOME PAGE </a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                      
+                         <h3>Services</h3>
+                        <ul>
+                            <li><a target="_blank" href="http://mail.google.com/a/itbhu.ac.in/"> Email Service </a></li>
+                            <li><a target="_blank" href="http://calendar.itbhu.ac.in/"> Calendar</a></li>
+                            <li><a href="http://bhu.ac.in/iitbhu/intranet/index.html">Intranet Portal</a></li>
+                            <li><a href="http://iitbhu.ac.in/antiragging/">Anti-ragging @ IIT(BHU)</a></li></a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                         <h3>Other</h3>
+                        <ul>
+                            <li><a href="http://www.itbhu.ac.in/institute/calendar.html">Academic Calender</a></li>
+                            <li><a href="http://iitbhu.ac.in/institute/notification/2015_holidays_IITBHU.pdf">List of Holidays </a></li>
+                            <li><a href="http://iitbhu.ac.in/antiragging/security.html"> IIT Proctorial Board</a></li>
+                            <li><a href="http://bhu.ac.in/kulgeet.htm" target="_new">Kulgeet</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                   <a href="http://iitbhu.ac.in/various/copyright.shtml">Copyright &copy; 2015</a> | <a href="{% url "home" %}">IIT(BHU)</a>, Varanasi - 221005. All Rights Reserved. | <a href="http://iitbhu.ac.in/various/disclaimer.shtml">Disclaimer</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Developed By</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.prettyPhoto.js"></script>
+    <script src="/static/js/jquery.isotope.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.min.js"></script>
+    <script src="/static/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/jquery.localScroll.js"></script>
+    <script src="/static/js/jquery.localScroll.min.js"></script>
+    <script>
+        $(document).ready(
+            function() { 
+                $("html").niceScroll({autohidemode: "false", cursorwidth: 10, zindex: 1});
+            }
+        );
+
+    </script>
+    <script>
+        $(document).ready(
+            function() { 
+                $("#scrollbox3").niceScroll({autohidemode: "false", cursorwidth: 10});
+            }
+        );
+    </script>
+    <script >
+        $('#navbar').localScroll({duration: 600});
+     </script>
+
+</body>
+</html>

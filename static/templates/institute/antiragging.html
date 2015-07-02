@@ -1,0 +1,84 @@
+{% extends "admission_base.html" %}
+
+{% block title %} Admission - Antiragging {% endblock %}
+
+{% block body %}
+
+    <section id="blog" class="container">
+        <div class="center" style="padding-bottom: 10px;">
+            <h2 align="center">Anti-Ragging</h2>
+            <h3 align='center '>UGC Regulations On Curbing The Menace Of Ragging In Higher Educational Institutions, 2009</h3>
+            <ul>
+                <li style="margin-bottom: 20px;"><a style="font-weight: bold;" class="jce_file" title=" English Version"
+                    href="images/ragging/gazzetaug2010.pdf" target="_blank">
+                    <span style="font-size: 10pt;"></span></a>
+                    <a style="color: rgb(102, 0, 204); font-weight: bold;" href="images/ragging/gazzetaug2010.pdf">
+                        Gazzetaug2010
+                    </a>
+                  | <span style="font-size: 10pt;">
+                        <span style="font-family: Arial;font-weight: bold;">
+                            <a class="jce_file" title="English Version" href="images/ragging/ragginggazetteenglish.pdf"
+                               target="_blank">EnglishVersion|
+                            </a>
+                            <a class="jce_file" title="Hindi Version" href="images/ragging/ragginggazettehindi.pdf"
+                                target="_blank">
+                                <span style="color: rgb(102, 0, 204);">Hindi Version</span>
+                        |   </a>
+                        </span>
+                        <a style="font-weight: bold; font-family: Arial;" href="images/ragging/Anti_Ragging_affidavit.pdf">
+                            Affidavit
+                        </a>
+                        <span style="font-weight: bold; font-family: Arial;"> | </span>
+                        <a style="font-weight: bold; font-family: Arial; color: rgb(102, 0, 204);"
+                            href="images/ragging/some-pts.pdf">Some points to remember about ragging
+                        </a><br>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="blog">
+            <div class="row">
+                <h4 align="left">Important Contact Numbers</h4>
+                <table id="id_list_table" class="table">
+                    {% for people in People  %}
+                        <tr>
+                            <td> {{ people.name }}</td>
+                            <td>Designation: {{ people.designation }}</td>>
+                            <td>Contact: {% if people.contact_off %}+91{{ people.contact_off }} (O){% endif %}
+                                {% if people.contact_res %}, +91{{ people.contact_res }} (Res){% endif %}
+                                {% if people.contact_other %}, +91{{ people.contact_other }}{% endif %}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div><!--/.row-->
+            <div class="row">
+                <h4 align="center"> PROCTORIAL BOARD OF IIT (BHU) VARANASI </h4>
+                <h6 align="center">For security and related help, please feel fee to contact:</h6>
+                <h6 align="center">BHU Control Room Phone Nos.: 0542-2369242 and 0542-2369134</h6>
+                <h5 align="center">Members of the Proctorial Board</h5>
+                <table id="id_list_table" class="table">
+                    {% for proctor in Proctor  %}
+                        <tr>
+                            <td> {{ proctor.name }}</td>
+                            <td>Designation: {{ proctor.designation }}</td>>
+                            <td>Contact: {% if proctor.contact_off %}+91{{ proctor.contact_off }} (O){% endif %}
+                                {% if proctor.contact_res %}, +91{{ proctor.contact_res }} (Res){% endif %}
+                                {% if proctor.contact_other %}, +91{{ proctor.contact_other }}{% endif %}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+
+            <div class="row">
+                <h5 align="left"> IIT(BHU)/ACD/2014-15/362/L</h5> <h5 align="right">July 22, 2014</h5>
+                <a href="images/antirag-2014-15committee.pdf"> In pursuance to UGC Regulations on Curbing the Menace of
+                    Ragging, the Director, IIT(BHU) has been pleased to constitute the Anti-Ragging Committee,
+                    Anti-Ragging Squad and the Standing Committee of Anti-Ragging Committee for the IIT(BHU) for Session
+                    2014-15 as under :
+                </a>
+            </div>
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+{% endblock %}

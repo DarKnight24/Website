@@ -1,0 +1,307 @@
+{% extends 'dept_base1.html' %}
+
+{% block title %}
+Courses - {{ Department.dept_name }}
+{% endblock %}
+
+{% block people %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block admission %} 
+<li>
+{% endblock %}
+
+{% block courses %} 
+<li class="active dropdown">
+{% endblock %}
+
+{% block research %} 
+<li>
+{% endblock %}
+
+{% block facilities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block activities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block placements %} 
+<li>
+{% endblock %}
+
+{% block contact %} 
+<li>
+{% endblock %}
+
+
+{% block table %}
+	<div class="accordion">
+	  <div id = "accordion1" class="panel-group">  
+	  <h2 id="btech">B.Tech Course Structure:</h2>
+	  	{% for i,j,k,l,n,o,p,q,r,s in btech_list %}
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{i}}">
+				<h3 class="panel-title">
+				<i class="fa fa-angle-down pull-down"></i>
+				   <b>{{j}}</b>
+				</h3>
+			    </a>
+		  </div>
+		  <div id="collapse{{i}}" class="panel-collapse collapse">
+			<div class="panel-body">
+				<table style="height: 375px;" align="center" border="1" cellpadding="4" cellspacing="0" width="auto">
+				  <tbody>
+					<tr valign="top">
+					  <td colspan="3" width="661">
+					  <p><strong>Subjects</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>Contact Hrs Per Week</strong></p>
+					  <p><strong>L&amp;T P</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>Credits</strong></p>
+					  </td>
+					</tr>
+					<tr>
+					  <td colspan="5" valign="top" width="1044">
+					  <p><strong>Theory</strong></p>
+					  </td>
+					</tr>
+					{% for course in k %}
+					<tr valign="top">
+					  <td width="106">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td width="183">
+					  <p>
+						{{course.course_code}}
+					  </p>
+					  </td>
+					  <td width="355">{{course.course_name}}</td>
+					  <td width="262">
+					  <p>{{course.contact_hours}}</p>
+					  </td>
+					  <td width="105">
+					  <p>{{course.credits}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+					
+					<tr valign="top">
+					  <td width="106">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="183">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="355">
+					  <p><strong>Total of Theory</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{o}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{n}}</strong></p>
+					  </td>
+					</tr>
+					<tr>
+					<tr>
+					  <td colspan="5" valign="top" width="1044">
+					  <p><strong>Practical</strong></p>
+					  </td>
+					</tr>
+					
+					{% for course in l %}
+					<tr valign="top">
+					  <td width="106">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td width="183">
+					  <p>{{course.course_code}}</p>
+					  </td>
+					  <td width="355">{{course.course_name}}</td>
+					  <td width="262">
+					  <p>{{course.contact_hours}}</p>
+					  </td>
+					  <td width="105">
+					  <p>{{course.credits}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+
+					<tr valign="top">
+					  <td width="106">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="183">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="355">
+					  <p><strong>Total of Practical</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{q}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{p}}</strong></p>
+					  </td>
+					</tr>
+					<tr valign="top">
+					  <td colspan="3" width="661">
+					  <p><strong>TOTAL OF SEMESTER</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{s}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{r}}</strong></p>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+		  </div>
+		</div>
+	  	{% endfor %}
+
+		<br>
+		<br>
+	  <h2 id="mtech">M.Tech/IDD Course Structure:</h2>
+	  	{% for i,j,k,l,n,o,p,q,r,s in idd_list %}
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+			    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{i}}">
+				<h3 class="panel-title">
+				<i class="fa fa-angle-down pull-down"></i>
+				   <b>{{j}}</b>
+				</h3>
+			    </a>
+		  </div>
+		  <div id="collapse{{i}}" class="panel-collapse collapse">
+			<div class="panel-body">
+				<table style="height: 375px;" align="center" border="1" cellpadding="4" cellspacing="0" width="auto">
+				  <tbody>
+					<tr valign="top">
+					  <td colspan="3" width="661">
+					  <p><strong>Subjects</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>Contact Hrs Per Week</strong></p>
+					  <p><strong>L&amp;T P</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>Credits</strong></p>
+					  </td>
+					</tr>
+					<tr>
+					  <td colspan="5" valign="top" width="1044">
+					  <p><strong>Theory</strong></p>
+					  </td>
+					</tr>
+					{% for course in k %}
+					<tr valign="top">
+					  <td width="106">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td width="183">
+					  <p>
+						{{course.course_code}}
+					  </p>
+					  </td>
+					  <td width="355">{{course.course_name}}</td>
+					  <td width="262">
+					  <p>{{course.contact_hours}}</p>
+					  </td>
+					  <td width="105">
+					  <p>{{course.credits}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+
+					<tr valign="top">
+					  <td width="106">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="183">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="355">
+					  <p><strong>Total of Theory</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{o}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{n}}</strong></p>
+					  </td>
+					</tr>
+					<tr>
+					<tr>
+					  <td colspan="5" valign="top" width="1044">
+					  <p><strong>Practical</strong></p>
+					  </td>
+					</tr>
+
+					{% for course in l %}
+					<tr valign="top">
+					  <td width="106">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td width="183">
+					  <p>{{course.course_code}}</p>
+					  </td>
+					  <td width="355">{{course.course_name}}</td>
+					  <td width="262">
+					  <p>{{course.contact_hours}}</p>
+					  </td>
+					  <td width="105">
+					  <p>{{course.credits}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+
+					<tr valign="top">
+					  <td width="106">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="183">
+					  <p>&nbsp;</p>
+					  </td>
+					  <td width="355">
+					  <p><strong>Total of Practical</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{q}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{p}}</strong></p>
+					  </td>
+					</tr>
+					<tr valign="top">
+					  <td colspan="3" width="661">
+					  <p><strong>TOTAL OF SEMESTER</strong></p>
+					  </td>
+					  <td width="262">
+					  <p><strong>{{s}}</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>{{r}}</strong></p>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+		  </div>
+		</div>
+	  	{% endfor %}
+
+
+	  </div><!--/#accordion1-->
+	</div><!--/.accordion-->
+  
+{% endblock %}

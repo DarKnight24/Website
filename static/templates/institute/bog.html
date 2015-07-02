@@ -1,0 +1,117 @@
+{% extends 'base1.html' %}
+
+{% block title %}
+Board Of Governors - IIT(BHU)
+{% endblock %}
+
+{% block home %}
+	<li class="">
+{% endblock %}
+
+
+{% block institute %}
+	<li class="active dropdown">
+{% endblock %}
+
+
+{% block academics %}
+	<li class="dropdown">
+{% endblock %}
+
+
+{% block admissions %}
+	<li class="dropdown">
+{% endblock %}
+
+
+{% block central %}
+	<li class="dropdown">
+{% endblock %}
+
+
+{% block news %}
+	<li class="dropdown">
+{% endblock %}
+
+
+{% block alumni %}
+	<li class="">
+{% endblock %}
+
+
+{% block tender %}
+	<li class="">
+{% endblock %}
+
+
+{% block contact %}
+	<li class="">
+{% endblock %}
+
+{% block heading %}
+Board Of Governors
+{% endblock %}
+                        
+
+{% block table %}
+	<div class="accordion">
+	  <div id = "accordion1" class="panel-group">  
+	  <h2 id="btech">Board Of Governors:</h2>
+	  	{% for k,i in full_list %}
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{k}}">
+				<h3 class="panel-title">
+				<i class="fa fa-angle-down pull-down"></i>
+				   <b>{{i}}</b>
+				</h3>
+			    </a>
+		  </div>
+		  <div id="collapse{{k}}" class="panel-collapse collapse">
+			<div class="panel-body">
+				<table style="height: 250px;" align="center" border="1" cellpadding="4" cellspacing="0" width="auto">
+				  	<tbody>
+						<tr valign="top">
+							<td colspan="3" width="661">
+						  		<center><b>Name and Address</b></center>
+						  	</td>
+						  	<td width="122">
+						  		<center><b>Position</b></center>
+						  	</td>
+						  	<td width="122">
+						 		<center><b>Tenure</b></center>
+					  		</td>
+						  	<td width="123">
+					 			<center><b>Nominated by</b></center>
+						  	</td>
+						</tr>
+	                    {% for j in Board_mem %}
+	                        {% if j.rank = i %}
+	                            <tr valign="top">
+	                            	<td colspan =3 width = "661">
+	                            		<b><strong>{{j.name}}</strong></b>
+	                            		<b>{{j.address}}</strong></b>
+	                            	</td>
+		                            <td width = "122">
+	    		                        <b>{{j.position}}</b>
+	            	                </td>
+		                            <td width = "122">
+	    		                        <b>{{j.tenure}}</b>
+	            	                </td>
+	            		            <td width = "123">
+	                    		        <b>{{j.nominate_by}}</b>
+	                            	</td>
+	                            </tr>
+	                        {% endif %}
+	                    {% endfor %}
+	                </tbody>
+	            </table>
+	        </div>
+	    </div>
+	   </div>
+        {% endfor %}
+    </div>
+</div>
+                                
+
+{% endblock %}

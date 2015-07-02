@@ -1,0 +1,90 @@
+{% extends 'dept_base2.html' %}
+
+{% block title %}
+Faculty - {{ Department.dept_name }}
+{% endblock %}
+
+{% block people %} 
+<li class="active dropdown">
+{% endblock %}
+
+{% block admission %} 
+<li>
+{% endblock %}
+
+{% block courses %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block research %} 
+<li>
+{% endblock %}
+
+{% block facilities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block activities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block placements %} 
+<li>
+{% endblock %}
+
+{% block contact %} 
+<li>
+{% endblock %}
+
+
+
+{% block table %}
+<div style="padding-bottom: 10px;">
+    <h2>Faculty:</h2>
+</div>
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 ">
+		<div class="slogan-section">
+			<p><i>"The professor is not merely an information dispensing machine, but a skilled navigator of a complex landscape." -</i> William Badk</p>
+        </div>
+	</div>
+</div>
+<div class="home-profs  clearfix">
+	<div class="container">
+		<div class="row">
+			 {% for faculty in Faculties  %}
+             <div class="col-lg-3 col-md-3 col-sm-6 doc-item">
+				<div class="common-prof animated fadeInUp clearfix ae-animation-fadeInUp">
+
+					<ul class="list-inline social-lists animate">
+						<li><a href="#">&nbsp;<i class="fa fa-facebook"></i>&nbsp;</a></li>
+						<li><a href="#">Profile<!-- <i class="fa fa-github"></i> --></a></li>
+						<li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+					</ul>
+
+					<figure>
+					<!-- {{ forloop.counter }}: <img src="/media/{{ faculty.photo }}" height="320px" width="280px"> -->
+						   <img  src="\static\images\man4.jpg" class="doc-img animate attachment-gallery-post-single wp-post-image" alt="prof-img"> 
+					</figure>
+
+					<span class="sexy-line"></span>
+					<br>
+					<div class="text-content">
+						<h5>{{ faculty.name }}</h5>
+						<h5><small>Designation: {{ faculty.designation }}</small></h5>
+						<p> <b>Qualification: </b>  {{ faculty.qualification }}</p>
+						<p> <b>Area of Interest: </b> {{ faculty.area_of_interest }}</p>
+						<p> <b>Contact: </b>{% if faculty.contact_off %}+91{{ faculty.contact_off }} (O){% endif %}{% if faculty.contact_res %}, +91{{ faculty.contact_res }} (Res){% endif %}{% if faculty.contact_other %}, +91{{ faculty.contact_other }}{% endif %}</p>
+						<p> <b>E-mail: </b>{{ faculty.email_off }} {% if faculty.email_other %}, {{ faculty.email_other }} {% endif %}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+</div>
+
+
+{% endblock %}
+

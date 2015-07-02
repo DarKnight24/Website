@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %} {% endblock %}</title>
+
+    <!-- core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/static/css/animate.min.css" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+    <link href="/static/css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.js"></script>
+    <script src="static/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/static/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/static/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        {% if Department.contact1 %}
+                            <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
+                                {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                            <div class="search">
+                                <form role="form">
+                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                                    <i class="fa fa-search"></i>
+                                </form>
+                           </div>
+                           <div class="login">
+                                <li><a href="#">Login/Register</a></li>
+                           </div>
+
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+       <nav id="navbar" class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href='{% url "home" %}'><img src="/static/images/logo.jpg" alt="logo" width="250px"></a>
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/department/cse">Home</a></li>
+                       {% block people %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">People<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'faculty' Department.dept_code %}">Faculty</a></li>
+                                <li><a href="{% url 'student' Department.dept_code %}">Students</a></li>
+                                <li><a href="{% url 'staff' Department.dept_code %}">Staff</a></li>
+                                <li><a href="{% url 'visitor' Department.dept_code %}">Visitors</a></li>
+                                <li><a href="{% url 'alumni' Department.dept_code %}">Alumni</a></li>
+                            </ul>
+                        </li>
+                        {% block admission %}{% endblock %}<a href="{% url 'dept_admission' Department.dept_code %}">Admission</a></li>
+                        {% block courses %}{% endblock %}
+                            <a href="{% url 'course' Department.dept_code %}" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'course' Department.dept_code %}#">B.Tech</a></li>
+                                <li><a href="{% url 'course' Department.dept_code %}#mtech">M.Tech/IDD</a></li>
+                                <li><a href="{% url 'course' Department.dept_code %}#phd">Ph.D</a></li>
+                            </ul>
+                        </li>
+                        {% block research %}{% endblock %}<a href="{% url 'research' Department.dept_code %}">Research</a></li>
+                        {% block facilities %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Facilities<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'lab' Department.dept_code %}">Laboratories</a></li>
+                                <li><a href="{% url 'equipment' Department.dept_code %}">Equipment</a></li>
+                            </ul>
+                        </li>
+                        {% block activities %}{% endblock %}
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Activities<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{% url 'publication' Department.dept_code %}">Publications</a></li>
+                                <li><a href="{% url 'project' Department.dept_code %}">Projects</a></li>
+                                <li><a href="{% url 'seminar' Department.dept_code %}">Seminars & Conf.'s</a></li>
+                                <li><a href="{% url 'talk' Department.dept_code %}">Tech. Talks</a></li>
+                            </ul>
+                        </li>
+                        {% block placements %}{% endblock %}<a href="{% url 'placement' Department.dept_code %}">Placements</a></li> 
+                        {% block contact %}{% endblock %}<a href="{% url 'contact' Department.dept_code %}">Contact</a></li>                        
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+
+    </header><!--/header-->
+
+    <section id="blog" class="container">
+        <div class="center" style="padding-bottom: 10px;">
+            <h2 align="left">Department of {{ Department.dept_name }}</h2>
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                <div class="col-md-8 ">
+                    <div class="border-top">
+                        <div class="col-md-13 ">
+                            <div class="col-sm-13 wow fadeInDown">
+
+                        {% block table %}
+                        {% endblock %}
+                        {% block body %}
+                        {% endblock %}
+
+                            </div><!--/.col-sm-13-->
+                        </div><!--/.col-md-13-->
+                    </div><!--/.border-top-->
+                </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="widget search">
+                        <form role="form">
+                                <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
+                        </form>
+                    </div><!--/.search-->
+                    
+                     
+
+                    <div class="widget categories">
+                        <h3>Notifications</h3>
+                        <div class="row">
+                            <div class="col-sm-14">
+                                <ul class="blog_category">
+                                    {% for notific in Notification %}
+                                        <li><a href="/department/{{Department.dept_code}}/notification/{{ notific.slug }}">{{ notific.title }} {% if notific.quality %}<span class="badge">New</span>{% endif %}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.categories-->
+                    
+                    <div class="widget archieve">
+                        <h3>Important Links</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <ul class="blog_archieve">
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Homepage </a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Central Library</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Main Library</a></li>
+                                    <li><a href="#"><i class="fa fa-angle-double-right"></i>  IIT Gymkhana</a></li>
+                                </ul>
+                            </div>
+                        </div>                     
+                    </div><!--/.archieve-->
+                    
+                    
+                    
+                    <div class="widget blog_gallery">
+                        <h3>Our Gallery</h3>
+                        <ul class="sidebar-gallery">
+                            <li><a href="#"><img src="/static/images/blog/gallery1.png" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/blog/gallery2.png" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/blog/gallery3.png" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/blog/gallery4.png" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/blog/gallery5.png" alt="" /></a></li>
+                            <li><a href="#"><img src="/static/images/blog/gallery6.png" alt="" /></a></li>
+                        </ul>
+                    </div><!--/.blog_gallery-->
+                        
+                    
+                </aside>     
+
+            </div><!--/.row-->
+
+         </div><!--/.blog-->
+
+    </section><!--/#blog-->
+
+
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                        <h3>Important</h3>
+                        <ul>
+                            <li><a href="http://www.iitbhu.ac.in/admissions/index.php/ordinances.html"> UG & PG Ordinance</a></li>
+                            <li><a href="http://iitbhu.ac.in/iitnotifications/Rolling%20Advertishment%20-%2011.3.13.pdf"> Rolling Advt. for Faculty</a></li>
+                            <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission/phd.html"> PG Admissions 2015-16</a></li>
+                            <li><a href="http://jeeadv.iitd.ac.in/">JEE(Advanced)</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                         <h3>Explore</h3>
+                        <ul>
+                            <li><a href="http://www.bhu.ac.in/proctor_office/" >Proctor Office</a></li>
+                            <li><a href="http://www.imsbhu.nic.in/hospital/index.htm" >Health Center</a></li>
+                            <li><a href="http://www.bhu.ac.in/bhulibrary/index.html">Central Library</a></li>
+                            <li><a href="http://www.bhu.ac.in/">BHU HOME PAGE </a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                      
+                         <h3>Services</h3>
+                        <ul>
+                            <li><a target="_blank" href="http://mail.google.com/a/itbhu.ac.in/"> Email Service </a></li>
+                            <li><a target="_blank" href="http://calendar.itbhu.ac.in/"> Calendar</a></li>
+                            <li><a href="http://bhu.ac.in/iitbhu/intranet/index.html">Intranet Portal</a></li>
+                            <li><a href="http://iitbhu.ac.in/antiragging/">Anti-ragging @ IIT(BHU)</a></li></a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="widget">
+                         <h3>Other</h3>
+                        <ul>
+                            <li><a href="http://www.itbhu.ac.in/institute/calendar.html">Academic Calender</a></li>
+                            <li><a href="http://iitbhu.ac.in/institute/notification/2015_holidays_IITBHU.pdf">List of Holidays </a></li>
+                            <li><a href="http://iitbhu.ac.in/antiragging/security.html"> IIT Proctorial Board</a></li>
+                            <li><a href="http://bhu.ac.in/kulgeet.htm" target="_new">Kulgeet</a></li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                   <a href="http://iitbhu.ac.in/various/copyright.shtml">Copyright &copy; 2015</a> | <a target="_blank" href="{% url "home" %}">IIT(BHU)</a>, Varanasi - 221005. All Rights Reserved. | <a href="http://iitbhu.ac.in/various/disclaimer.shtml">Disclaimer</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                        <li><a href="{% url 'dept_home' Department.dept_code %}">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Developed By</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.prettyPhoto.js"></script>
+    <script src="/static/js/jquery.isotope.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/wow.min.js"></script>
+    <script src="/static/js/jquery.nicescroll.min.js"></script>
+    <script src="/static/js/jquery.scrollTo.min.js"></script>
+    <script src="/static/js/jquery.localScroll.js"></script>
+    <script src="/static/js/jquery.localScroll.min.js"></script>
+    <script>
+        $(document).ready(
+            function() { 
+                $("html").niceScroll({autohidemode: "false", cursorwidth: 10, zindex: 1});
+            }
+        );
+
+    </script>
+    <script>
+        $(document).ready(
+            function() { 
+                $("#scrollbox3").niceScroll({autohidemode: "false", cursorwidth: 10});
+            }
+        );
+    </script>
+    <script >
+        $('#navbar').localScroll({duration: 600});
+     </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'people_base.html' %}
+
+{% block title %}
+Faculty - {{ Department.dept_name }}
+{% endblock %}
+
+{% block people %} 
+<li class="active dropdown">
+{% endblock %}
+
+{% block admission %} 
+<li>
+{% endblock %}
+
+{% block courses %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block research %} 
+<li>
+{% endblock %}
+
+{% block facilities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block activities %} 
+<li class="dropdown">
+{% endblock %}
+
+{% block placements %} 
+<li>
+{% endblock %}
+
+{% block table %}
+    <table id="id_list_table" class="table">
+        {% for off in officials  %}
+            <tr><td>{{ forloop.counter }}: <img src="/media/{{ off.photo }}" height="320px" width="280px"></td></tr>
+            <tr><td> {{ off.name }}</td></tr>
+            <tr><td>{{ off.rank_name }}{%if off.rank_area %}({{off.rank_area}}){% endif %}</td></tr>
+            <tr><td>Qualification: {{off.qualification }}</td></tr>
+            
+            <tr><td>Contact: {% if off.contact_off %}+91{{ off.contact_off }} (O){% endif %}{% if off.contact_res %}, +91{{ off.contact_res }} (Res){% endif %}{% if off.contact_other %}, +91{{ off.contact_other }}{% endif %}</td></tr>
+            <tr><td>E-mail: {{ off.email_off }} (O){% if off.email_other %}, {{off.email_other }} {% endif %}</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
