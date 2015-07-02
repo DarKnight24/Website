@@ -11,18 +11,18 @@ from collections import OrderedDict
 context_dict = {}
 
 def department(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
-    #context_dict['de_code']=dept_code1   
+    # dept_code = dept_code[:2].upper()
+    #context_dict['de_code']=dept_code   
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
         try:
-            notific = Notification.objects.filter(notif_of=dept_code1).order_by('date')[:10]
+            notific = Notification.objects.filter(notif_of=dept_code).order_by('date')[:10]
         except:
             notific = []
         context_dict['Notification'] = notific
         try:
-            galler = Gallery.objects.filter(gallery_of = dept_code1)
+            galler = Gallery.objects.filter(gallery_of = dept_code)
             try:
                 img = Image.objects.filter(gallery_id = galler.gallery_id).order_by('-upload_date')[:10]
             except:
@@ -39,14 +39,14 @@ def department(request, dept_code):
 
 
 def faculty(request,dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        faculties = Faculty.objects.filter(dept=dept_code1)
+        faculties = Faculty.objects.filter(dept=dept_code)
         context_dict['Faculties'] = faculties
 
     except:
@@ -56,15 +56,15 @@ def faculty(request,dept_code):
 
 
 def student(request,dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        btech = Student.objects.filter(dept = dept_code1, degree = 1).values('year_of_admission')
-        idd = Student.objects.filter(dept = dept_code1, degree = 2).values('year_of_admission')
+        btech = Student.objects.filter(dept = dept_code, degree = 1).values('year_of_admission')
+        idd = Student.objects.filter(dept = dept_code, degree = 2).values('year_of_admission')
 
         btech_list = list()
         idd_list = list()
@@ -75,15 +75,15 @@ def student(request,dept_code):
         btech_list = sorted(list(OrderedDict.fromkeys(btech_list)),reverse=True)
         idd_list = sorted(list(OrderedDict.fromkeys(idd_list)),reverse=True)
 
-        btech1 = Student.objects.filter(dept = dept_code1, degree = 1, year_of_admission = btech_list[0]).order_by('roll_no')
-        btech2 = Student.objects.filter(dept = dept_code1, degree = 1, year_of_admission = btech_list[1]).order_by('roll_no')
-        btech3 = Student.objects.filter(dept = dept_code1, degree = 1, year_of_admission = btech_list[2]).order_by('roll_no')
-        btech4 = Student.objects.filter(dept = dept_code1, degree = 1, year_of_admission = btech_list[3]).order_by('roll_no')
-        idd1 = Student.objects.filter(dept = dept_code1, degree = 2, year_of_admission = idd_list[0]).order_by('roll_no')
-        idd2 = Student.objects.filter(dept = dept_code1, degree = 2, year_of_admission = idd_list[1]).order_by('roll_no')
-        idd3 = Student.objects.filter(dept = dept_code1, degree = 2, year_of_admission = idd_list[2]).order_by('roll_no')
-        idd4 = Student.objects.filter(dept = dept_code1, degree = 2, year_of_admission = idd_list[3]).order_by('roll_no')
-        idd5 = Student.objects.filter(dept = dept_code1, degree = 2, year_of_admission = idd_list[4]).order_by('roll_no')
+        btech1 = Student.objects.filter(dept = dept_code, degree = 1, year_of_admission = btech_list[0]).order_by('roll_no')
+        btech2 = Student.objects.filter(dept = dept_code, degree = 1, year_of_admission = btech_list[1]).order_by('roll_no')
+        btech3 = Student.objects.filter(dept = dept_code, degree = 1, year_of_admission = btech_list[2]).order_by('roll_no')
+        btech4 = Student.objects.filter(dept = dept_code, degree = 1, year_of_admission = btech_list[3]).order_by('roll_no')
+        idd1 = Student.objects.filter(dept = dept_code, degree = 2, year_of_admission = idd_list[0]).order_by('roll_no')
+        idd2 = Student.objects.filter(dept = dept_code, degree = 2, year_of_admission = idd_list[1]).order_by('roll_no')
+        idd3 = Student.objects.filter(dept = dept_code, degree = 2, year_of_admission = idd_list[2]).order_by('roll_no')
+        idd4 = Student.objects.filter(dept = dept_code, degree = 2, year_of_admission = idd_list[3]).order_by('roll_no')
+        idd5 = Student.objects.filter(dept = dept_code, degree = 2, year_of_admission = idd_list[4]).order_by('roll_no')
 
         headings_btech  = [ "B.Tech Part - I",
                             "B.Tech Part - II",
@@ -121,14 +121,14 @@ def student(request,dept_code):
 
 
 def phd(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        phd_list = Phd.objects.filter(dept = dept_code1)
+        phd_list = Phd.objects.filter(dept = dept_code)
         context_dict['Phd'] = phd_list
     except:
         raise Http404
@@ -136,14 +136,14 @@ def phd(request, dept_code):
 
 
 def staff(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        staffs = Staff.objects.filter(dept = dept_code1)
+        staffs = Staff.objects.filter(dept = dept_code)
         context_dict['staff'] = staffs
     except:
         raise Http404
@@ -151,9 +151,9 @@ def staff(request, dept_code):
 
 
 def visitor(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -161,9 +161,9 @@ def visitor(request, dept_code):
 
     
 def alumni(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -172,9 +172,9 @@ def alumni(request, dept_code):
 
     
 def dept_admission(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -183,57 +183,57 @@ def dept_admission(request, dept_code):
 
 
 def course(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
-#    dept_code1 = dept_code.upper()
+    # dept_code = dept_code[:2].upper()
+#    dept_code = dept_code.upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        btech_three_t = Course.objects.filter(dept = dept_code1, sem = 3, b_tech = 1, type = 1).order_by('course_code')
-        btech_four_t = Course.objects.filter(dept = dept_code1, sem = 4, b_tech = 1, type = 1).order_by('course_code')
-        btech_five_t = Course.objects.filter(dept = dept_code1, sem = 5, b_tech = 1, type = 1).order_by('course_code')
-        btech_six_t = Course.objects.filter(dept = dept_code1, sem = 6, b_tech = 1, type = 1).order_by('course_code')
-        btech_seven_t = Course.objects.filter(dept = dept_code1, sem = 7, b_tech = 1, type = 1).order_by('course_code')
-        btech_eight_t = Course.objects.filter(dept = dept_code1, sem = 8, b_tech = 1, type = 1).order_by('course_code')
-        idd_three_t = Course.objects.filter(dept = dept_code1, sem = 3, idd = 1, type = 1).order_by('course_code')
-        idd_four_t = Course.objects.filter(dept = dept_code1, sem = 4, idd = 1, type = 1).order_by('course_code')
-        idd_five_t = Course.objects.filter(dept = dept_code1, sem = 5, idd = 1, type = 1).order_by('course_code')
-        idd_six_t = Course.objects.filter(dept = dept_code1, sem = 6, idd = 1, type = 1).order_by('course_code')
-        idd_seven_t = Course.objects.filter(dept = dept_code1, sem = 7, idd = 1, type = 1).order_by('course_code')
-        idd_eight_t = Course.objects.filter(dept = dept_code1, sem = 8, idd = 1, type = 1).order_by('course_code')
-        idd_nine_t = Course.objects.filter(dept = dept_code1, sem = 9, idd = 1, type = 1).order_by('course_code')
-        idd_ten_t = Course.objects.filter(dept = dept_code1, sem = 10, idd = 1, type = 1).order_by('course_code')
-        btech_three_p = Course.objects.filter(dept = dept_code1, sem = 3, b_tech = 1, type = 2).order_by('course_code')
-        btech_four_p = Course.objects.filter(dept = dept_code1, sem = 4, b_tech = 1, type = 2).order_by('course_code')
-        btech_five_p = Course.objects.filter(dept = dept_code1, sem = 5, b_tech = 1, type = 2).order_by('course_code')
-        btech_six_p = Course.objects.filter(dept = dept_code1, sem = 6, b_tech = 1, type = 2).order_by('course_code')
-        btech_seven_p = Course.objects.filter(dept = dept_code1, sem = 7, b_tech = 1, type = 2).order_by('course_code')
-        btech_eight_p = Course.objects.filter(dept = dept_code1, sem = 8, b_tech = 1, type = 2).order_by('course_code')
-        idd_three_p = Course.objects.filter(dept = dept_code1, sem = 3, idd = 1, type = 2).order_by('course_code')
-        idd_four_p = Course.objects.filter(dept = dept_code1, sem = 4, idd = 1, type = 2).order_by('course_code')
-        idd_five_p = Course.objects.filter(dept = dept_code1, sem = 5, idd = 1, type = 2).order_by('course_code')
-        idd_six_p = Course.objects.filter(dept = dept_code1, sem = 6, idd = 1, type = 2).order_by('course_code')
-        idd_seven_p = Course.objects.filter(dept = dept_code1, sem = 7, idd = 1, type = 2).order_by('course_code')
-        idd_eight_p = Course.objects.filter(dept = dept_code1, sem = 8, idd = 1, type = 2).order_by('course_code')
-        idd_nine_p = Course.objects.filter(dept = dept_code1, sem = 9, idd = 1, type = 2).order_by('course_code')
-        idd_ten_p = Course.objects.filter(dept = dept_code1, sem = 10, idd = 1, type = 2).order_by('course_code')
+        btech_three_t = Course.objects.filter(dept = dept_code, sem = 3, b_tech = 1, type = 1).order_by('course_code')
+        btech_four_t = Course.objects.filter(dept = dept_code, sem = 4, b_tech = 1, type = 1).order_by('course_code')
+        btech_five_t = Course.objects.filter(dept = dept_code, sem = 5, b_tech = 1, type = 1).order_by('course_code')
+        btech_six_t = Course.objects.filter(dept = dept_code, sem = 6, b_tech = 1, type = 1).order_by('course_code')
+        btech_seven_t = Course.objects.filter(dept = dept_code, sem = 7, b_tech = 1, type = 1).order_by('course_code')
+        btech_eight_t = Course.objects.filter(dept = dept_code, sem = 8, b_tech = 1, type = 1).order_by('course_code')
+        idd_three_t = Course.objects.filter(dept = dept_code, sem = 3, idd = 1, type = 1).order_by('course_code')
+        idd_four_t = Course.objects.filter(dept = dept_code, sem = 4, idd = 1, type = 1).order_by('course_code')
+        idd_five_t = Course.objects.filter(dept = dept_code, sem = 5, idd = 1, type = 1).order_by('course_code')
+        idd_six_t = Course.objects.filter(dept = dept_code, sem = 6, idd = 1, type = 1).order_by('course_code')
+        idd_seven_t = Course.objects.filter(dept = dept_code, sem = 7, idd = 1, type = 1).order_by('course_code')
+        idd_eight_t = Course.objects.filter(dept = dept_code, sem = 8, idd = 1, type = 1).order_by('course_code')
+        idd_nine_t = Course.objects.filter(dept = dept_code, sem = 9, idd = 1, type = 1).order_by('course_code')
+        idd_ten_t = Course.objects.filter(dept = dept_code, sem = 10, idd = 1, type = 1).order_by('course_code')
+        btech_three_p = Course.objects.filter(dept = dept_code, sem = 3, b_tech = 1, type = 2).order_by('course_code')
+        btech_four_p = Course.objects.filter(dept = dept_code, sem = 4, b_tech = 1, type = 2).order_by('course_code')
+        btech_five_p = Course.objects.filter(dept = dept_code, sem = 5, b_tech = 1, type = 2).order_by('course_code')
+        btech_six_p = Course.objects.filter(dept = dept_code, sem = 6, b_tech = 1, type = 2).order_by('course_code')
+        btech_seven_p = Course.objects.filter(dept = dept_code, sem = 7, b_tech = 1, type = 2).order_by('course_code')
+        btech_eight_p = Course.objects.filter(dept = dept_code, sem = 8, b_tech = 1, type = 2).order_by('course_code')
+        idd_three_p = Course.objects.filter(dept = dept_code, sem = 3, idd = 1, type = 2).order_by('course_code')
+        idd_four_p = Course.objects.filter(dept = dept_code, sem = 4, idd = 1, type = 2).order_by('course_code')
+        idd_five_p = Course.objects.filter(dept = dept_code, sem = 5, idd = 1, type = 2).order_by('course_code')
+        idd_six_p = Course.objects.filter(dept = dept_code, sem = 6, idd = 1, type = 2).order_by('course_code')
+        idd_seven_p = Course.objects.filter(dept = dept_code, sem = 7, idd = 1, type = 2).order_by('course_code')
+        idd_eight_p = Course.objects.filter(dept = dept_code, sem = 8, idd = 1, type = 2).order_by('course_code')
+        idd_nine_p = Course.objects.filter(dept = dept_code, sem = 9, idd = 1, type = 2).order_by('course_code')
+        idd_ten_p = Course.objects.filter(dept = dept_code, sem = 10, idd = 1, type = 2).order_by('course_code')
         
 
         #Total of Semester.
-        cred_total_btech_t = Course.objects.filter(dept = dept_code1, b_tech = 1, type = 1).values('sem').annotate(sum = Sum('credits'))
-        hrs_total_btech_t = Course.objects.filter(dept = dept_code1, b_tech = 1, type = 1).values('sem').annotate(sum = Sum('contact_hours'))
-        cred_total_idd_t = Course.objects.filter(dept = dept_code1, idd = 1, type = 1).values('sem').annotate(sum = Sum('credits'))
-        hrs_total_idd_t = Course.objects.filter(dept = dept_code1, idd = 1, type = 1).values('sem').annotate(sum = Sum('contact_hours'))
-        cred_total_btech_p = Course.objects.filter(dept = dept_code1, b_tech = 1, type = 2).values('sem').annotate(sum = Sum('credits'))
-        hrs_total_btech_p = Course.objects.filter(dept = dept_code1, b_tech = 1, type = 2).values('sem').annotate(sum = Sum('contact_hours'))
-        cred_total_idd_p = Course.objects.filter(dept = dept_code1, idd = 1, type = 2).values('sem').annotate(sum = Sum('credits'))
-        hrs_total_idd_p = Course.objects.filter(dept = dept_code1, idd = 1, type = 2).values('sem').annotate(sum = Sum('contact_hours'))
-        sem_cred_btech = Course.objects.filter(dept = dept_code1, b_tech = 1).values('sem').annotate(sum = Sum('credits'))
-        sem_hrs_btech = Course.objects.filter(dept = dept_code1, b_tech = 1).values('sem').annotate(sum = Sum('contact_hours'))
-        sem_cred_idd = Course.objects.filter(dept = dept_code1, idd = 1).values('sem').annotate(sum = Sum('credits'))
-        sem_hrs_idd = Course.objects.filter(dept = dept_code1, idd = 1).values('sem').annotate(sum = Sum('contact_hours'))
+        cred_total_btech_t = Course.objects.filter(dept = dept_code, b_tech = 1, type = 1).values('sem').annotate(sum = Sum('credits'))
+        hrs_total_btech_t = Course.objects.filter(dept = dept_code, b_tech = 1, type = 1).values('sem').annotate(sum = Sum('contact_hours'))
+        cred_total_idd_t = Course.objects.filter(dept = dept_code, idd = 1, type = 1).values('sem').annotate(sum = Sum('credits'))
+        hrs_total_idd_t = Course.objects.filter(dept = dept_code, idd = 1, type = 1).values('sem').annotate(sum = Sum('contact_hours'))
+        cred_total_btech_p = Course.objects.filter(dept = dept_code, b_tech = 1, type = 2).values('sem').annotate(sum = Sum('credits'))
+        hrs_total_btech_p = Course.objects.filter(dept = dept_code, b_tech = 1, type = 2).values('sem').annotate(sum = Sum('contact_hours'))
+        cred_total_idd_p = Course.objects.filter(dept = dept_code, idd = 1, type = 2).values('sem').annotate(sum = Sum('credits'))
+        hrs_total_idd_p = Course.objects.filter(dept = dept_code, idd = 1, type = 2).values('sem').annotate(sum = Sum('contact_hours'))
+        sem_cred_btech = Course.objects.filter(dept = dept_code, b_tech = 1).values('sem').annotate(sum = Sum('credits'))
+        sem_hrs_btech = Course.objects.filter(dept = dept_code, b_tech = 1).values('sem').annotate(sum = Sum('contact_hours'))
+        sem_cred_idd = Course.objects.filter(dept = dept_code, idd = 1).values('sem').annotate(sum = Sum('credits'))
+        sem_hrs_idd = Course.objects.filter(dept = dept_code, idd = 1).values('sem').annotate(sum = Sum('contact_hours'))
 
         sum_cred_total_btech_t = list()
         sum_hrs_total_btech_t = list()
@@ -338,14 +338,14 @@ def course(request, dept_code):
 
 
 def research(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        supervisors = PhdResearch.objects.filter(dept = dept_code1).values('supervisor')
+        supervisors = PhdResearch.objects.filter(dept = dept_code).values('supervisor')
 
         sv_list = list()
         for i in supervisors: sv_list.append(i['supervisor'])
@@ -362,7 +362,7 @@ def research(request, dept_code):
         for i,j in z:
             print i,j
             s = "sv"+j
-            context_dict[s] = PhdResearch.objects.filter(dept = dept_code1, supervisor = i)
+            context_dict[s] = PhdResearch.objects.filter(dept = dept_code, supervisor = i)
             names.append(context_dict[s])
 
         full_list = izip_longest(sv_list, names)
@@ -374,9 +374,9 @@ def research(request, dept_code):
 
 
 def publication(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -388,14 +388,14 @@ def publication(request, dept_code):
 
 
 def project(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
     try:
-        projects = Project.objects.filter(dept = dept_code1)
+        projects = Project.objects.filter(dept = dept_code)
         context_dict['Projects'] = projects
     except:
         raise Http404
@@ -403,9 +403,9 @@ def project(request, dept_code):
 
 
 def seminar(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -413,9 +413,9 @@ def seminar(request, dept_code):
 
 
 def talk(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -423,9 +423,9 @@ def talk(request, dept_code):
 
 
 def equipment(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -433,9 +433,9 @@ def equipment(request, dept_code):
 
 
 def lab(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -443,9 +443,9 @@ def lab(request, dept_code):
 
 
 def placement(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -454,9 +454,9 @@ def placement(request, dept_code):
 
 
 def contact(request, dept_code):
-    dept_code1 = dept_code[:2].upper()
+    # dept_code = dept_code[:2].upper()
     try:
-        dept = Department.objects.get(dept_code = dept_code1)
+        dept = Department.objects.get(dept_code = dept_code)
         context_dict['Department'] = dept
     except:
         raise Http404
@@ -466,14 +466,14 @@ def contact(request, dept_code):
 def notification_all(request, dept_code=None):
     context_dict['slug'] = None
     if dept_code:
-        dept_code1 = dept_code[:2].upper()
+        # dept_code = dept_code[:2].upper()
         try:
-            dept = Department.objects.get(dept_code = dept_code1)
+            dept = Department.objects.get(dept_code = dept_code)
             context_dict['Department'] = dept
         except:
             raise Http404
         try:
-            notification = Notification.objects.filter(notif_of=dept_code1)
+            notification = Notification.objects.filter(notif_of=dept_code)
             context_dict['notifications'] = notification
         except:
             raise Http404

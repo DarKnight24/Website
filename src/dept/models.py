@@ -174,7 +174,7 @@ class Course(models.Model):
         (1,'Theory'),
         (2,'Practical'),
     }
-    course_id = models.IntegerField()
+    course_id = models.IntegerField(unique = True, primary_key = True)
     sem = models.IntegerField()
     course_code = models.CharField(max_length = 10, null = False, blank = False, default = 'null')
     course_name = models.CharField(max_length = 50, null = False, blank = False, default = 'null')
