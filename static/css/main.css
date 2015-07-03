@@ -2729,9 +2729,10 @@ ul.sidebar-gallery {
 .blog .row .publications_panel .tile .name{
   width:100%;
   height:30%;
+  padding-left: 2px;
 } 
 .blog .row .publications_panel .row .tile span  p{
-  color:#000;
+  color:#fff;
   padding-left:5%;
   padding-right:5%;
   padding-bottom: 10px; 
@@ -2750,20 +2751,37 @@ ul.sidebar-gallery {
   display: block;
   overflow: hidden;
   background: #204066;
-  color: #fff;
+  opacity: 0.7;
+  width: 70%;
+  bottom: 75px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  position: relative;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
+.candidate {
+  display: block;
+  overflow: hidden;
+  background: #204066;
   opacity: 0.7;
   width: 70%;
   bottom: 50px;
   padding-top: 10px;
   padding-bottom: 5px;
   position: relative;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
-.blog .row .publications_panel .row .tile  span #candidate_name{
+
+/*.blog .row .publications_panel .row .tile  span #candidate_name{
   padding-top:5px;
   padding-left:5%;
   padding-right:5%;
 }
-
+*/
 /******************
  404 page css
  ******************/

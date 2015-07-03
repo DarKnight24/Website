@@ -1,0 +1,80 @@
+{% extends '../dept/research.html' %}
+
+{% block research_data %}
+
+	  <h2>Research Areas:</h2>
+	  <div class ="text">
+	  	<ul>
+			<li>Artificial Intelligence, Neural Networks</li>
+			<li>Database System, Data Mining, Web Mining, Social Networks</li>
+			<li>Parallel/Distributed Computing  </li>
+			<li>Software Engineering, Software Reengineering</li>
+			<li>Multiagent Systems, Semantic Web, Robotics</li>
+			<li>Image Processing, Computer Vision, Biomedical Imaging</li>
+			<li>Biometrics, Pattern Classification, Video Processing</li>
+			<li>Computational Aspects of Bioinformatics Algorithms</li>
+			<li>Design and Analysis of Algorithms</li>
+			<li>High Performance Computing</li>
+			<li>E-Learning Technologies</li>
+			<li>Information Extraction, Text Summarization</li>
+			<li>Natural Language Processing</li>
+			<li>Information Retrieval</li>
+			<li>Computational Liguistics</li>
+			<li>Other related areas and their applications.</li>
+	  	</ul>
+	  </div>	  
+	  <br><br>
+	  <h2>Ph.D Research Guidance:</h2>
+	  	{% for supervisor,names in full_list %}
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{forloop.counter}}">
+				<h3 class="panel-title">
+				<i class="fa fa-angle-down pull-down"></i>
+				   <b>Supervisor: {{supervisor}} </b>
+				</h3>
+			    </a>
+		  </div>
+		  <div id="collapse{{forloop.counter}}" class="panel-collapse collapse">
+			<div class="panel-body">
+				<table  style="height: 50px; border-bottom: 1px solid #ddd; " align="center" cellpadding="1" cellspacing="0" width="auto">
+				  <tbody>
+					<tr valign="top">
+					  <td width="50">
+					  <p><strong>S.No.</strong></p>
+					  </td>
+					  <td width="202">
+					  <p><strong>Student</strong></p>
+					  </td>
+					  <td colspan="3" width="671">
+					  <p><strong>Research Topic</strong></p>
+					  </td>
+					  <td width="105">
+					  <p><strong>Status</strong></p>
+					  </td>
+					</tr>
+					{% for student in names %}
+					<tr class="border-top" valign="top">
+					  <td style="padding-top: 10px;" width="50">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td style="padding-top: 10px;" width="202">
+					  <p>{{student.name}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" colspan="3" width="671">
+					  <p>{{student.topic}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" width="105">
+					  <p>{{student.status}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+					
+				  </tbody>
+				</table>
+			</div>
+		  </div>
+		</div>
+	  	{% endfor %}
+
+{% endblock %}
