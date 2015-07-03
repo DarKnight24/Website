@@ -2,7 +2,7 @@ from django.conf.urls import url,patterns
 from dept import views
 
 urlpatterns = patterns('',
-    url(r'^department/(?P<dept_code>[\w\-]+)$', views.department, name = 'dept_home'),
+    url(r'^department/(?P<dept_code>[\w\-]+)/$', views.department, name = 'dept_home'),
 	url(r'^department/(?P<dept_code>[\w\-]+)/people/faculty/$',views.faculty,name ='faculty'),
 	url(r'^department/(?P<dept_code>[\w\-]+)/people/student/$',views.student,name='student'),
 	url(r'^department/(?P<dept_code>[\w\-]+)/people/staff/$',views.staff,name='staff'),
