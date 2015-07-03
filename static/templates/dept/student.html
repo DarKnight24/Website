@@ -41,17 +41,17 @@ Students - {{ Department.dept_name }}
 	<div class="accordion">
 	  <div id = "accordion1" class="panel-group">  
 	  <h2 id="btech">List of B.Tech Students:</h2>
-	  	{% for year,title,students in full_list_btech %}
+	  	{% for counter,title,students in full_list_btech %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{year}}">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{counter}}">
 				<h3 class="panel-title">
 				<i class="fa fa-angle-down pull-down"></i>
 				   <b>{{title}}</b>
 				</h3>
 			    </a>
 		  </div>
-		  <div id="collapse{{year}}" class="panel-collapse collapse">
+		  <div id="collapse{{counter}}" class="panel-collapse collapse">
 			<div class="panel-body">
 				<table  style="height: 50px; border-bottom: 1px solid #ddd; " align="center" cellpadding="1" cellspacing="0" width="auto">
 				  <tbody>

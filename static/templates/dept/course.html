@@ -41,17 +41,17 @@ Courses - {{ Department.dept_name }}
 	<div class="accordion">
 	  <div id = "accordion1" class="panel-group">  
 	  <h2 id="btech">B.Tech Course Structure:</h2>
-	  	{% for i,j,k,l,n,o,p,q,r,s in btech_list %}
+	  	{% for counter,title,theory,practical,theory_credits,theory_hours,practical_credits,practical_hours,total_credits,total_hours in btech_list %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{i}}">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{counter}}">
 				<h3 class="panel-title">
 				<i class="fa fa-angle-down pull-down"></i>
-				   <b>{{j}}</b>
+				   <b>{{title}}</b>
 				</h3>
 			    </a>
 		  </div>
-		  <div id="collapse{{i}}" class="panel-collapse collapse">
+		  <div id="collapse{{counter}}" class="panel-collapse collapse">
 			<div class="panel-body">
 				<table style="height: 375px;" align="center" border="1" cellpadding="4" cellspacing="0" width="auto">
 				  <tbody>
@@ -72,7 +72,7 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Theory</strong></p>
 					  </td>
 					</tr>
-					{% for course in k %}
+					{% for course in theory %}
 					<tr valign="top">
 					  <td width="106">
 					  <p>{{forloop.counter}}.</p>
@@ -103,10 +103,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Total of Theory</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{o}}</strong></p>
+					  <p><strong>{{theory_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{n}}</strong></p>
+					  <p><strong>{{theory_credits}}</strong></p>
 					  </td>
 					</tr>
 					<tr>
@@ -116,7 +116,7 @@ Courses - {{ Department.dept_name }}
 					  </td>
 					</tr>
 					
-					{% for course in l %}
+					{% for course in practical %}
 					<tr valign="top">
 					  <td width="106">
 					  <p>{{forloop.counter}}.</p>
@@ -145,10 +145,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Total of Practical</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{q}}</strong></p>
+					  <p><strong>{{practical_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{p}}</strong></p>
+					  <p><strong>{{practical_credits}}</strong></p>
 					  </td>
 					</tr>
 					<tr valign="top">
@@ -156,10 +156,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>TOTAL OF SEMESTER</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{s}}</strong></p>
+					  <p><strong>{{total_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{r}}</strong></p>
+					  <p><strong>{{total_credits}}</strong></p>
 					  </td>
 					</tr>
 				  </tbody>
@@ -172,17 +172,17 @@ Courses - {{ Department.dept_name }}
 		<br>
 		<br>
 	  <h2 id="mtech">M.Tech/IDD Course Structure:</h2>
-	  	{% for i,j,k,l,n,o,p,q,r,s in idd_list %}
+	  	{% for counter,title,theory,practical,theory_credits,theory_hours,practical_credits,practical_hours,total_credits,total_hours in idd_list %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
-			    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{i}}">
+			    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse{{counter}}">
 				<h3 class="panel-title">
 				<i class="fa fa-angle-down pull-down"></i>
-				   <b>{{j}}</b>
+				   <b>{{title}}</b>
 				</h3>
 			    </a>
 		  </div>
-		  <div id="collapse{{i}}" class="panel-collapse collapse">
+		  <div id="collapse{{counter}}" class="panel-collapse collapse">
 			<div class="panel-body">
 				<table style="height: 375px;" align="center" border="1" cellpadding="4" cellspacing="0" width="auto">
 				  <tbody>
@@ -203,7 +203,7 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Theory</strong></p>
 					  </td>
 					</tr>
-					{% for course in k %}
+					{% for course in theory %}
 					<tr valign="top">
 					  <td width="106">
 					  <p>{{forloop.counter}}.</p>
@@ -234,10 +234,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Total of Theory</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{o}}</strong></p>
+					  <p><strong>{{theory_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{n}}</strong></p>
+					  <p><strong>{{theory_credits}}</strong></p>
 					  </td>
 					</tr>
 					<tr>
@@ -247,7 +247,7 @@ Courses - {{ Department.dept_name }}
 					  </td>
 					</tr>
 
-					{% for course in l %}
+					{% for course in practical %}
 					<tr valign="top">
 					  <td width="106">
 					  <p>{{forloop.counter}}.</p>
@@ -276,10 +276,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>Total of Practical</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{q}}</strong></p>
+					  <p><strong>{{practical_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{p}}</strong></p>
+					  <p><strong>{{practical_credits}}</strong></p>
 					  </td>
 					</tr>
 					<tr valign="top">
@@ -287,10 +287,10 @@ Courses - {{ Department.dept_name }}
 					  <p><strong>TOTAL OF SEMESTER</strong></p>
 					  </td>
 					  <td width="262">
-					  <p><strong>{{s}}</strong></p>
+					  <p><strong>{{total_hours}}</strong></p>
 					  </td>
 					  <td width="105">
-					  <p><strong>{{r}}</strong></p>
+					  <p><strong>{{total_credits}}</strong></p>
 					  </td>
 					</tr>
 				  </tbody>

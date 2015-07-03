@@ -12,11 +12,72 @@
 <li class="active dropdown">
 {% endblock %}
 
-{% block body %}
-    <div style="padding-bottom: 10px;">
-        <h2>Projects:</h2>
-        {% block project_data %}
-        {% endblock %}
-    </div>
-
+{% block table %}
+	<div class="accordion">
+	  <div id = "accordion1" class="panel-group">  
+	  	<h2>Projects:</h2>
+		<div class="panel panel-default">
+		  <div class="panel-heading active">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1">
+				<h3 class="panel-title">
+				<i class="fa fa-angle-down pull-down"></i>
+				   <b>Research Grants / Projects:</b>
+				</h3>
+			    </a>
+		  </div>
+		  <div id="collapse" class="panel-collapse in">
+			<div class="panel-body">
+				<table  style="height: 50px; border-bottom: 1px solid #ddd; " align="center" cellpadding="1" cellspacing="0" width="auto">
+				  <tbody>
+					<tr valign="top">
+					  <td width="60">
+					  <p><strong>S.No.</strong></p>
+					  </td>
+					  <td width="200">
+					  <p><strong>Principal Investigator</strong></p>
+					  </td>
+					  <td colspan="1" width="421">
+					  <p><strong>Project</strong></p>
+					  </td>
+					  <td colspan="2" width="661">
+					  <p><strong>Sponsor</strong></p>
+					  </td>
+					  <td colspan="3" width="561">
+					  <p><strong>Grant</strong></p>
+					  </td>
+					  <td colspan="2" width="661">
+					  <p><strong>Duration</strong></p>
+					  </td>
+					</tr>
+					{% for project in Projects %}
+					<tr class="border-top" valign="top">
+					  <td style="padding-top: 10px;" width="60">
+					  <p>{{forloop.counter}}.</p>
+					  </td>
+					  <td style="padding-top: 10px;" width="200">
+					  <p>{{project.investigator}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" colspan="1" width="421">
+					  <p>{{project.project}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" colspan="2" width="661">
+					  <p>{{project.sponsor}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" colspan="3" width="561">
+					  <p>{{project.amount}} {{project.units}}</p>
+					  </td>
+					  <td style="padding-top: 10px;" colspan="2" width="661">
+					  <p>{{project.year}}</p>
+					  </td>
+					</tr>
+					{% endfor %}
+					
+				  </tbody>
+				</table>
+			</div>
+		  </div>
+		</div>
+	  </div><!--/#accordion1-->
+	</div><!--/.accordion-->
+  
 {% endblock %}

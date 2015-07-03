@@ -2870,6 +2870,167 @@ shortcodes page css
 
 
 
+/**************************************************
+********* HomePage Notification Panels ************
+**************************************************/
+
+
+.main-text
+{
+  position: absolute;
+  top: 215px;
+  right: 100px;
+  width: 40%;
+  z-index: 10;
+  color: black;
+  background: transparent;
+  opacity: 0.8;
+}
+
+.btn-min-block
+{
+  min-width: 170px;
+  line-height: 26px;
+}
+
+.btn-clear
+{
+  color: #FFF;
+  background-color: transparent;
+  border-color: #FFF;
+  margin : 10px;
+}
+
+.btn-clear:hover
+{
+  color: #000;
+  background-color: #FFF;
+}
+
+.main-text h3 
+{
+  font-size: 13px;
+}
+
+.main-text h1 
+{
+  font-size: 14px;
+}
+
+/*Panel Headings*/
+
+#panel-title {
+  position: absolute;
+  display: block; 
+  float: left; 
+  width: 120px;
+  color: #fff;
+  padding: 11px 0px 1px 5px;
+  top: 0px;
+  left: 15px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: #8B497E;
+}
+#panel-title p{
+  padding-left: 5px;
+}
+
+#panel-title2 {
+  position: absolute;
+  display: block; 
+  float: left; 
+  width: 120px;
+  color: #fff;
+  padding: 11px 0px 1px 5px;
+  top: 88px;
+  left: 15px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: #8B497E;
+}
+#panel-title2 p{
+  padding-left: 5px;
+}
+
+
+#panel-title3 {
+  position: absolute;
+  display: block; 
+  float: left; 
+  width: 120px;
+  color: #fff;
+  padding: 11px 0px 1px 5px;
+  top: 176px;
+  left: 15px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: #8B497E;
+}
+#panel-title3 p{
+  padding-left: 5px;
+}
+
+#panel-title4 {
+  position: absolute;
+  display: block; 
+  float: left; 
+  width: 120px;
+  color: #fff;
+  padding: 11px 0px 1px 5px;
+  top: 264px;
+  left: 15px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: #8B497E;
+}
+#panel-title4 p{
+  padding-left: 5px;
+}
+
+/* News Ticker */
+#ticker_container {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #343434;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  overflow: auto;
+}
+#ticker_container2 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #343434;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  overflow: auto;
+}
+#ticker_container3 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #343434;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  overflow: auto;
+}
+#ticker_container4 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #FFFFFF;
+  padding: 10px;
+  border: 1px solid #343434;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  overflow: auto;
+}
+
+
 
 
 

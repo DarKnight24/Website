@@ -9,9 +9,9 @@ from django.template.defaultfilters import slugify
 MEDIA_ROOT_IMAGES = 'images/'
 MEDIA_ROOT_GALLERY = 'gallery/'
 MEDIA_ROOT_DOCUMENTS = 'documents/'
+
+
 #Function for saving images/docs in dynamic path. 
-
-
 def __get_path_faculty__(instance, filename):
     getDept = instance.dept.dept_code
     upload_dir = os.path.join(MEDIA_ROOT_IMAGES,getDept,'Faculty')
@@ -22,6 +22,7 @@ def __get_path_faculty__(instance, filename):
 
 # Create your models here.
 
+#validators 
 alphanum = RegexValidator(r'^[0-9 a-z A-Z]*$','Only Alphanumeric values are allowed')
 num = RegexValidator(r'^[0-9]*$','Only Integer values are allowed')
 tenDigitContact = RegexValidator(r'^\d{10,10}$','Enter a Valid 10 digit number.', 'Invalid number')
@@ -76,13 +77,6 @@ class Faculty(models.Model):
 
 
 class Student(models.Model):
-    # ENGG_YEAR = {
-    #     (1,'1st Yr'),
-    #     (2,'2nd Yr'),
-    #     (3,'3rd Yr'),
-    #     (4,'4th Yr'),
-    #     (5,'5th Yr'),
-    # }
     DEGREE = {
             (1,'B.Tech'),
             (2,'IDD'),
