@@ -68,9 +68,6 @@
 .pull-right {
   float: right;
 }
-.pull-down {
-  float: right;
-}
 .pull-left {
   float: left;
 }
@@ -78,9 +75,6 @@
   margin-right: .3em;
 }
 .fa.pull-right {
-  margin-left: .3em;
-}
-.fa.pull-down {
   margin-left: .3em;
 }
 .fa-spin {
