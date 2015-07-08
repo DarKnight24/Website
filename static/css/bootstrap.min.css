@@ -1007,7 +1007,7 @@ pre code {
   .col-sm-14 {
     width: 50%;
   }
-  
+
   .col-sm-14>ul {
     width: 230%;
   }
@@ -3964,7 +3964,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
   clear: both;
 }
 
-@media(min-width:768px) {
+@media(min-width:1020px) {
   .navbar-header {
     float: left;
   }
@@ -4002,7 +4002,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
   overflow-y: auto;
 }
 
-@media(min-width:768px) {
+@media(min-width:1020px) {
   .navbar-collapse {
     width: auto;
     border-top: 0;
@@ -4114,7 +4114,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
   margin-top: 4px;
 }
 
-@media(min-width:768px) {
+@media(min-width:1020px) {
   .navbar-toggle {
     display: none;
   }
