@@ -389,7 +389,8 @@ input.search-form:hover {
 }
 
 #main-slider .carousel .carousel-content {
-  margin-top: 150px;
+  margin-top: 360px;
+  width: 110%;
 }
 
 #main-slider .carousel .slide-margin{
@@ -405,7 +406,7 @@ input.search-form:hover {
   background: #8B497E;
   color: #fff;
   border-radius: 4px;
-  margin-top: 25px;
+  margin-top: 5px;
   display: inline-block;
 }
 
@@ -2938,14 +2939,11 @@ shortcodes page css
 /*Panel Headings*/
 
 #panel-title {
-  position: absolute;
   display: block;
   float: left;
-  width: 120px;
+  width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
-  top: 0px;
-  left: 15px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -2955,14 +2953,11 @@ shortcodes page css
 }
 
 #panel-title2 {
-  position: absolute;
   display: block;
   float: left;
-  width: 120px;
+  width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
-  top: 88px;
-  left: 15px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -2973,14 +2968,11 @@ shortcodes page css
 
 
 #panel-title3 {
-  position: absolute;
   display: block;
   float: left;
-  width: 120px;
+  width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
-  top: 176px;
-  left: 15px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -2990,14 +2982,11 @@ shortcodes page css
 }
 
 #panel-title4 {
-  position: absolute;
   display: block;
   float: left;
-  width: 120px;
+  width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
-  top: 264px;
-  left: 15px;
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -3010,8 +2999,6 @@ shortcodes page css
 #ticker_container {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -3020,8 +3007,6 @@ shortcodes page css
 #ticker_container2 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -3030,8 +3015,6 @@ shortcodes page css
 #ticker_container3 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
@@ -3040,8 +3023,6 @@ shortcodes page css
 #ticker_container4 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
