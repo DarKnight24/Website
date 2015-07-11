@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <meta http-equiv="description" content="Official Website Of Indian Institute of Technology ( Banaras Hindu University ), Varanasi -India">
     <title>Indian Institute of technology, Banaras Hindu University IIT(BHU)</title>
-	
+
 	<!-- core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="/static/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
@@ -35,30 +35,15 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-4">
+                    <div class="col-xs-8">
                         {% if Department.dept_contact %}
                             <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.dept_contact }}</p></div>
                         {% endif %}
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                           <div class="login">
+                    <div class="col-xs-4">
+                           <div class="login pull-right">
                                 <li><a href="#">Login (CAS)</a></li>
                            </div>
-                       </div>
                     </div>
                 </div>
             </div><!--/.container-->
@@ -75,7 +60,7 @@
                     </button>
                     <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/images/logo.jpg" alt="logo" width="250px"></a>
                 </div>
-				
+
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href='department/CS'>Home</a></li>
@@ -156,7 +141,7 @@
                                 <li><a href="http://iitbhu.ac.in/mainworkshop/it_main_workshop/">Main Workshop</a></li>
                                 <li><a href="http://iitbhu.ac.in/mciie/">MCIIE</a></li>
                                 <li><a href="http://iitbhu.ac.in/wmes_web/">WMES</a></li>
-                            </ul>                        
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">News<b class="caret"></b></a>
@@ -169,12 +154,12 @@
                         </li>
                         <li><a href="http://www.iitbhu.ac.in/alumni">Alumni</a></li>
                         <li><a href="http://www.iitbhu.ac.in/alumni">Tenders</a></li>
-                        <li><a href="http://www.iitbhu.ac.in/institute/contactus.html">Contact</a></li>                        
+                        <li><a href="http://www.iitbhu.ac.in/institute/contactus.html">Contact</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-		
+
     </header><!--/header-->
 
     <section id="main-slider" class="no-margin">
@@ -273,7 +258,7 @@
             <i class="fa fa-chevron-right"></i>
         </a>
             <div class="main-text">
-                <div class="col-md-12 ">                    
+                <div class="col-md-12 ">
 <!--                     <div id="wrapper easing">
                         <ul id="ticker1">
                             <li><a href="#" target="_blank" style="color: rgb(51, 51, 51); font-weight: normal; height: 22px;">This is the first news story.</a></li>
@@ -324,9 +309,9 @@
                         <div class="bn-arrows">
                             <span class="bn-arrows-left"></span>
                             <span class="bn-arrows-right"></span>
-                        </div>  
+                        </div>
                     </div>
-                    <!-- -->        
+                    <!-- -->
                     <br>
                     <!-- Updates -->
                     <div class="NotificationPanel easing" id="panelupdates2">
@@ -342,9 +327,9 @@
                         <div class="bn-arrows">
                             <span class="bn-arrows-left"></span>
                             <span class="bn-arrows-right"></span>
-                        </div>  
+                        </div>
                     </div>
-                    <!-- -->        
+                    <!-- -->
                     <br>
                     <!-- Updates -->
                     <div class="NotificationPanel easing" id="panelupdates3">
@@ -360,9 +345,9 @@
                         <div class="bn-arrows">
                             <span class="bn-arrows-left"></span>
                             <span class="bn-arrows-right"></span>
-                        </div>  
+                        </div>
                     </div>
-                    <!-- -->        
+                    <!-- -->
                     <br>
                     <!-- Updates -->
                     <div class="NotificationPanel easing" id="panelupdates4">
@@ -378,11 +363,11 @@
                         <div class="bn-arrows">
                             <span class="bn-arrows-left"></span>
                             <span class="bn-arrows-right"></span>
-                        </div>  
+                        </div>
                     </div>
-                    <!-- -->        
+                    <!-- -->
                 </section><!--//section-->
- 
+
                 </div>
             </div>
 
@@ -587,7 +572,7 @@
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#middle-->
-    
+
 
     <section id="recent-works">
         <div class="container">
@@ -622,7 +607,7 @@
                 <div class="col-xs-12 col-sm-12 wow fadeInDown">
                  <h2>This Section is for small paragraphs about IIT(BHU)</h2>
 
-                   <div class="tab-wrap"> 
+                   <div class="tab-wrap">
                         <div class="media">
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
@@ -656,7 +641,7 @@
                                             </div>
                                             <div class="media-body">
                                                  <h2>Overview of Undergraduate programme</h2>
-                                                 <p>IIT (BHU) Varanasi offers four year instructional programmes for the degree of Bachelor of Technology (B.Tech) and Bachelor of Pharmacy (B.Pharm). Five year programmes are categorized into the Integrated Dual Degree (IDD) programme and Integrated Master’s Degree (IMD) programme. 
+                                                 <p>IIT (BHU) Varanasi offers four year instructional programmes for the degree of Bachelor of Technology (B.Tech) and Bachelor of Pharmacy (B.Pharm). Five year programmes are categorized into the Integrated Dual Degree (IDD) programme and Integrated Master’s Degree (IMD) programme.
                                                  </p>
                                             </div>
                                         </div>
@@ -665,7 +650,7 @@
                                      <div class="tab-pane fade" id="tab3">
                                         <p>Postgraduate courses offer Master of Technology (M.Tech) and Ph.D. degrees. Admissions to the M. Tech programme are made through the Graduate Aptitude Test in Engineering (GATE) conducted jointly by Indian Institute of Science and Indian Institutes of Technology.</p>
                                      </div>
-                                     
+
                                      <div class="tab-pane fade" id="tab4">
                                         <p>IIT (BHU) has 17 academic units including 10 Engineering Departments, 3 Science Departments, 3 Interdisciplinary Schools and 1 Humanities & Social Sciences Section. The academic departments at IIT (BHU) Varanasi are: Engineering: Ceramic Engineering Chemical Engineering Civil Engineering Computer Science & Engineering Electrical Engineering Electronics Engineering Mechanical Engineering Metallurgical Engineering Mining Engineering Pharmaceutics Department of Electrical Engineering at IIT (BHU) Sciences: Chemistry Mathematics Physics Interdisciplinary Schools: Biochemical Engineering Biomedical Engineering Material Science and Technology Humanities & Social Sciences Section</p>
                                      </div>
@@ -673,10 +658,10 @@
                                      <div class="tab-pane fade" id="tab5">
                                         <p>Malaviya Centre for Innovation, Incubation and Entrepreneurship (MCIIE) was established in 2008. The objective of the MCIIE is to produce successful firms that will leave the program financially viable. Incubator tenants not only benefit from business and technical assistance, they also benefit from official affiliation with the incubator, a supportive community with an entrepreneurial environment, direct link to entrepreneurs, and immediate networking and commercial opportunities with other tenant firms</p>
                                      </div>
-                                </div> <!--/.tab-content-->  
-                            </div> <!--/.media-body--> 
-                        </div> <!--/.media-->     
-                    </div><!--/.tab-wrap-->               
+                                </div> <!--/.tab-content-->
+                            </div> <!--/.media-body-->
+                        </div> <!--/.media-->
+                    </div><!--/.tab-wrap-->
                 </div><!--/.col-sm-6-->
 
                 <div class="col-xs-12 col-sm-12 wow fadeInDown">
@@ -709,9 +694,9 @@
         </div><!--/.container-->
     </section><!--/#content-->
 
-    
 
-  
+
+
 
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
@@ -725,7 +710,7 @@
                             <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission/phd.html"> PG Admissions 2015-16</a></li>
                             <li><a href="http://jeeadv.iitd.ac.in/">JEE(Advanced)</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -737,12 +722,12 @@
                             <li><a href="http://www.bhu.ac.in/bhulibrary/index.html">Central Library</a></li>
                             <li><a href="http://www.bhu.ac.in/">BHU HOME PAGE </a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                      
+
                          <h3>Services</h3>
                         <ul>
                             <li><a target="_blank" href="http://mail.google.com/a/itbhu.ac.in/"> Email Service </a></li>
@@ -750,7 +735,7 @@
                             <li><a href="http://bhu.ac.in/iitbhu/intranet/index.html">Intranet Portal</a></li>
                             <li><a href="http://iitbhu.ac.in/antiragging/">Anti-ragging @ IIT(BHU)</a></li></a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -762,7 +747,7 @@
                             <li><a href="http://iitbhu.ac.in/antiragging/security.html"> IIT Proctorial Board</a></li>
                             <li><a href="http://bhu.ac.in/kulgeet.htm" target="_new">Kulgeet</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
             </div>
         </div>
@@ -797,7 +782,7 @@
     <script src="/static/js/jquery.localScroll.min.js"></script>
     <script src="/static/js/tickerme.min.js"></script>
     <script src="/static/js/PanelUpdates.js"></script>
-    
+
     <script type="text/javascript">
         $(function(){
             $('#ticker1').tickerme();
@@ -808,7 +793,7 @@
     </script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("html").niceScroll({autohidemode: "false", cursorwidth: 10, zindex: 1});
             }
         );
@@ -816,7 +801,7 @@
     </script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("#scrollbox3").niceScroll({autohidemode: "false", cursorwidth: 10});
             }
         );
@@ -842,7 +827,7 @@
                 autoplay        :true,
                 effect          :'slide'
             });
-        }); 
+        });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -861,7 +846,7 @@
                 autoplay        :true,
                 effect          :'slide'
             });
-        }); 
+        });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -880,7 +865,7 @@
                 autoplay        :true,
                 effect          :'slide'
             });
-        }); 
+        });
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -899,7 +884,7 @@
                 autoplay        :true,
                 effect          :'slide'
             });
-        }); 
+        });
     </script>
 
 </body>

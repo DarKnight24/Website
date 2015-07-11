@@ -32,33 +32,19 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-                        {% if Department.contact1 %}
-                            <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
-                                {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
-                        {% endif %}
-                    </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                           <div class="login">
-                                <li><a href="#">Login (CAS)</a></li>
-                           </div>
-
-                       </div>
-                    </div>
+                  <div class="col-xs-9">
+                      {% if Department.contact1 %}
+                          <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
+                              {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
+                      {% endif %}
+                  </div>
+                  <div class="col-xs-3">
+                     <div class="social">
+                         <div class="login">
+                              <li><a href="#">Login (CAS)</a></li>
+                         </div>
+                     </div>
+                  </div>
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
@@ -114,8 +100,8 @@
                                 <li><a href="{% url 'talk' Department.dept_code %}">Tech. Talks</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'placement' Department.dept_code %}">Placements</a></li> 
-                        <li><a href="{% url 'contact' Department.dept_code %}">Contact</a></li>                        
+                        <li><a href="{% url 'placement' Department.dept_code %}">Placements</a></li>
+                        <li><a href="{% url 'contact' Department.dept_code %}">Contact</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
@@ -133,7 +119,7 @@
                     <div class="col-sm-12 wow fadeInDown">
                         {% block body %}
                         {% endblock %}
-                        
+
                         {% block table %}
                         {% endblock %}
                     </div><!--/.col-sm-13-->
@@ -156,7 +142,7 @@
                             <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission/phd.html"> PG Admissions 2015-16</a></li>
                             <li><a href="http://jeeadv.iitd.ac.in/">JEE(Advanced)</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -168,12 +154,12 @@
                             <li><a href="http://www.bhu.ac.in/bhulibrary/index.html">Central Library</a></li>
                             <li><a href="http://www.bhu.ac.in/">BHU HOME PAGE </a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                      
+
                          <h3>Services</h3>
                         <ul>
                             <li><a target="_blank" href="http://mail.google.com/a/itbhu.ac.in/"> Email Service </a></li>
@@ -181,7 +167,7 @@
                             <li><a href="http://bhu.ac.in/iitbhu/intranet/index.html">Intranet Portal</a></li>
                             <li><a href="http://iitbhu.ac.in/antiragging/">Anti-ragging @ IIT(BHU)</a></li></a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -193,7 +179,7 @@
                             <li><a href="http://iitbhu.ac.in/antiragging/security.html"> IIT Proctorial Board</a></li>
                             <li><a href="http://bhu.ac.in/kulgeet.htm" target="_new">Kulgeet</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
             </div>
         </div>
@@ -228,7 +214,7 @@
     <script src="/static/js/jquery.localScroll.min.js"></script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("html").niceScroll({autohidemode: "false", cursorwidth: 10, zindex: 1});
             }
         );
@@ -236,7 +222,7 @@
     </script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("#scrollbox3").niceScroll({autohidemode: "false", cursorwidth: 10});
             }
         );
