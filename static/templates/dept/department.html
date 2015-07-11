@@ -93,9 +93,9 @@
                         <li class="dropdown">
                             <a href="{% url 'course' Department.dept_code %}" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'course' Department.dept_code %}#">B.Tech</a></li>
-                                <li><a href="{% url 'course' Department.dept_code %}#mtech">M.Tech/IDD</a></li>
-                                <li><a href="{% url 'course' Department.dept_code %}#phd">Ph.D</a></li>
+                                {% if Department.b_tech %}<li><a href="{% url 'course' Department.dept_code %}#">B.Tech</a></li>{% endif %}
+                                {% if Department.m_tech or Department.idd %}<li><a href="{% url 'course' Department.dept_code %}#mtech">M.Tech/IDD</a></li>{% endif %}
+                                {% if Department.ph_d %}<li><a href="{% url 'course' Department.dept_code %}#phd">Ph.D</a></li>{% endif %}
                             </ul>
                         </li>
                         <li><a href="{% url 'research' Department.dept_code %}">Research</a></li>
@@ -157,7 +157,7 @@
                     <div class="widget categories">
                         <h3>Notifications</h3>
                         <div class="row">
-                            <div class="col-sm-14">
+                            <div class="col-sm-12">
                                 <ul class="blog_category">
                                     {% for notific in Notification %}
                                         <li><a href="/department/{{Department.dept_code}}/notification/{{ notific.slug }}">{{ notific.title }} {% if notific.quality %}<span class="badge">New</span>{% endif %}</a></li>
