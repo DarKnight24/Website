@@ -434,12 +434,17 @@ def notification_all(request, dept_code=None):
 def notification(request,notif_title_slug, dept_code=None):
     context_dict['slug'] = notif_title_slug
     try:
-        notification = Notification.objects.filter(slug=notif_title_slug)
-        context_dict['notification'] = notification
+        _notification = Notification.objects.get(slug=notif_title_slug)
+        context_dict['notification'] = _notification
     except:
         raise Http404
     if dept_code:
+        try:
+            dept = Department.objects.get(dept_code = dept_code)
+            context_dict['Department'] = dept
+        except:
+            raise Http404
         return render(request,'dept_notification.html',context_dict)
     else:
-        return render(request,'notification.html',context_dict)
+        raise Http404
 
