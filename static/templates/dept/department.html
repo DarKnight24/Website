@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>{{ Department.dept_name }},IIT(BHU)</title>
-    
+
     <!-- core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/font-awesome.min.css" rel="stylesheet">
@@ -16,11 +16,11 @@
     <link href="/static/css/responsive.css" rel="stylesheet">
     <link href="/static/css/scrollbar.css" rel="stylesheet">
 
-    
+
     <!--[if lt IE 9]>
     <script src="static/js/html5shiv.js"></script>
     <script src="static/js/respond.min.js"></script>
-    <![endif]-->       
+    <![endif]-->
     <link rel="shortcut icon" href="/static/images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
@@ -34,32 +34,24 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-4">
+                    <div class="col-xs-8">
                         {% if Department.contact1 %}
                             <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
                                 {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
                         {% endif %}
                     </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
+                    <div class="col-xs-4">
+                           <div class="login pull-right">
+                                <li><a href="#">Login (CAS)</a></li>
                            </div>
+<<<<<<< HEAD
                            <div class="login">
                                 <li><a href="#">Login (CAS)</a></li>
                            </div>
 
                        </div>
+=======
+>>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
                     </div>
                 </div>
             </div><!--/.container-->
@@ -76,7 +68,7 @@
                     </button>
                     <a class="navbar-brand" href='{% url "home" %}'><img src="/static/images/logo.jpg" alt="logo" width="250px"></a>
                 </div>
-                
+
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class = "active"><a href="{% url 'dept_home' Department.dept_code %}">Home</a></li>
@@ -94,9 +86,9 @@
                         <li class="dropdown">
                             <a href="{% url 'course' Department.dept_code %}" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'course' Department.dept_code %}#">B.Tech</a></li>
-                                <li><a href="{% url 'course' Department.dept_code %}#mtech">M.Tech/IDD</a></li>
-                                <li><a href="{% url 'course' Department.dept_code %}#phd">Ph.D</a></li>
+                                {% if Department.b_tech %}<li><a href="{% url 'course' Department.dept_code %}#">B.Tech</a></li>{% endif %}
+                                {% if Department.m_tech or Department.idd %}<li><a href="{% url 'course' Department.dept_code %}#mtech">M.Tech/IDD</a></li>{% endif %}
+                                {% if Department.ph_d %}<li><a href="{% url 'course' Department.dept_code %}#phd">Ph.D</a></li>{% endif %}
                             </ul>
                         </li>
                         <li><a href="{% url 'research' Department.dept_code %}">Research</a></li>
@@ -116,13 +108,13 @@
                                 <li><a href="{% url 'talk' Department.dept_code %}">Tech. Talks</a></li>
                             </ul>
                         </li>
-                        <li><a href="{% url 'placement' Department.dept_code %}">Placements</a></li> 
-                        <li><a href="{% url 'contact' Department.dept_code %}">Contact</a></li>                        
+                        <li><a href="{% url 'placement' Department.dept_code %}">Placements</a></li>
+                        <li><a href="{% url 'contact' Department.dept_code %}">Contact</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-        
+
     </header><!--/header-->
 
 
@@ -139,53 +131,13 @@
                         <a class="preview" href="/static/images/blog/{{Department.dept_code}}.jpg" rel="prettyPhoto">
                         <img class="img-responsive img-blog" src="/static/images/blog/{{Department.dept_code}}.jpg" width="100%" alt="" />
                         </a>
-                            <div class="row">  
-                              
+                            <div class="row">
+
                                 <div class="col-xs-12 col-sm-12 blog-content" style=" text-align: justify; text-justify: inter-word;">
                                     {% block info %}{% endblock %}
                                 </div>
                             </div>
                         </div><!--/.blog-item-->
-                        
-                      
-                        
-
-
-                        <div id="contact-page clearfix">
-                            <div class="status alert alert-success" style="display: none"></div>
-                            <div class="message_heading">
-                                <h4>Leave a Replay</h4>
-                                <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
-                            </div> 
-      
-                            <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        <div class="form-group">
-                                            <label>Name *</label>
-                                            <input type="text" class="form-control" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email *</label>
-                                            <input type="email" class="form-control" required="required">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>URL</label>
-                                            <input type="url" class="form-control">
-                                        </div>                    
-                                    </div>
-                                    <div class="col-sm-7">                        
-                                        <div class="form-group">
-                                            <label>Message *</label>
-                                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
-                                        </div>                        
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>     
-                        </div><!--/#contact-page-->
                     </div><!--/.col-md-8-->
 
                 <aside class="col-md-4">
@@ -194,23 +146,61 @@
                                 <input type="text" class="form-control search_box" autocomplete="off" placeholder="Search Here">
                         </form>
                     </div><!--/.search-->
-    				
-                     
 
                     <div class="widget categories">
                         <h3>Notifications</h3>
                         <div class="row">
-                            <div class="col-sm-14">
+                            <div class="col-sm-12">
                                 <ul class="blog_category">
                                     {% for notific in Notification %}
                                         <li><a href="/department/{{Department.dept_code}}/notification/{{ notific.slug }}">{{ notific.title }} {% if notific.quality %}<span class="badge">New</span>{% endif %}</a></li>
                                     {% endfor %}
                                 </ul>
                             </div>
-                        </div>                     
+                        </div>
                     </div><!--/.categories-->
-    				
-    				<div class="widget archieve">
+                  </aside>
+                </div> <!--/.row-->
+                <div class="row">
+                  <div class="col-md-8">
+                    <div id="contact-page clearfix">
+                        <div class="status alert alert-success" style="display: none"></div>
+                        <div class="message_heading">
+                            <h4>Leave a Replay</h4>
+                            <p>Make sure you enter the(*)required information where indicate.HTML code is not allowed</p>
+                        </div>
+
+                        <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php" role="form">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="form-group">
+                                        <label>Name *</label>
+                                        <input type="text" class="form-control" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email *</label>
+                                        <input type="email" class="form-control" required="required">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>URL</label>
+                                        <input type="url" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="form-group">
+                                        <label>Message *</label>
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!--/#contact-page-->
+                  </div>
+                  <aside class="col-md-4">
+    				        <div class="widget archieve">
                         <h3>Important Links</h3>
                         <div class="row">
                             <div class="col-sm-12">
@@ -221,12 +211,10 @@
                                     <li><a href="#"><i class="fa fa-angle-double-right"></i>  IIT Gymkhana</a></li>
                                 </ul>
                             </div>
-                        </div>                     
+                        </div>
                     </div><!--/.archieve-->
-    				
-                    
-    				
-    				<div class="widget blog_gallery">
+
+    				        <div class="widget blog_gallery">
                         <h3>Our Gallery</h3>
                         <ul class="sidebar-gallery">
                             <li><a href="#"><img src="/static/images/blog/gallery1.png" alt="" /></a></li>
@@ -237,14 +225,9 @@
                             <li><a href="#"><img src="/static/images/blog/gallery6.png" alt="" /></a></li>
                         </ul>
                     </div><!--/.blog_gallery-->
-    					
-    				
-                </aside>     
-
+                </aside>
             </div><!--/.row-->
-
          </div><!--/.blog-->
-
     </section><!--/#blog-->
 
 
@@ -260,7 +243,7 @@
                             <li><a href="http://www.iitbhu.ac.in/admissions/index.php/admission/phd.html"> PG Admissions 2015-16</a></li>
                             <li><a href="http://jeeadv.iitd.ac.in/">JEE(Advanced)</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -272,12 +255,12 @@
                             <li><a href="http://www.bhu.ac.in/bhulibrary/index.html">Central Library</a></li>
                             <li><a href="http://www.bhu.ac.in/">BHU HOME PAGE </a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                      
+
                          <h3>Services</h3>
                         <ul>
                             <li><a target="_blank" href="http://mail.google.com/a/itbhu.ac.in/"> Email Service </a></li>
@@ -285,7 +268,7 @@
                             <li><a href="http://bhu.ac.in/iitbhu/intranet/index.html">Intranet Portal</a></li>
                             <li><a href="http://iitbhu.ac.in/antiragging/">Anti-ragging @ IIT(BHU)</a></li></a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
@@ -297,7 +280,7 @@
                             <li><a href="http://iitbhu.ac.in/antiragging/security.html"> IIT Proctorial Board</a></li>
                             <li><a href="http://bhu.ac.in/kulgeet.htm" target="_new">Kulgeet</a></li>
                         </ul>
-                    </div>    
+                    </div>
                 </div><!--/.col-md-3-->
             </div>
         </div>
@@ -332,7 +315,7 @@
     <script src="/static/js/jquery.localScroll.min.js"></script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("html").niceScroll({autohidemode: "false", cursorwidth: 10, zindex: 1});
             }
         );
@@ -340,7 +323,7 @@
     </script>
     <script>
         $(document).ready(
-            function() { 
+            function() {
                 $("#scrollbox3").niceScroll({autohidemode: "false", cursorwidth: 10});
             }
         );
@@ -359,7 +342,7 @@
             // return "#"+((1<<24)*Math.random()|0).toString(16)
         }
     </script>
-     
+
 
 </body>
 </html>

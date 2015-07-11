@@ -4,43 +4,49 @@
 Students - {{ Department.dept_name }}
 {% endblock %}
 
-{% block people %} 
+{% block people %}
 <li class="active dropdown">
 {% endblock %}
 
-{% block admission %} 
+{% block admission %}
 <li>
 {% endblock %}
 
-{% block courses %} 
+{% block courses %}
 <li class="dropdown">
 {% endblock %}
 
-{% block research %} 
+{% block research %}
 <li>
 {% endblock %}
 
-{% block facilities %} 
+{% block facilities %}
 <li class="dropdown">
 {% endblock %}
 
-{% block activities %} 
+{% block activities %}
 <li class="dropdown">
 {% endblock %}
 
-{% block placements %} 
+{% block placements %}
 <li>
 {% endblock %}
 
-{% block contact %} 
+{% block contact %}
 <li>
 {% endblock %}
 
 
 {% block table %}
 	<div class="accordion">
+<<<<<<< HEAD
 	  <div id = "accordion1" class="panel-group">  
 	  <h2 id="btech">List of B.Tech Students:</h2>
+=======
+	  <div id = "accordion1" class="panel-group">
+	  {% if Department.b_tech %}
+	  	<h2 id="btech">List of B.Tech Students:</h2>
+>>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 	  	{% for counter,title,students in full_list_btech %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -79,17 +85,18 @@ Students - {{ Department.dept_name }}
 					  </td>
 					</tr>
 					{% endfor %}
-					
+
 				  </tbody>
 				</table>
 			</div>
 		  </div>
 		</div>
-	  	{% endfor %}
-
+	 tasd 	{% endfor %}
+	  {% endif %}
 		<br>
 		<br>
-	  <h2 id="mtech">List of M.Tech/IDD Students:</h2>
+	  {% if Department.m_tech or Department.idd %}
+	  	<h2 id="mtech">List of M.Tech/IDD Students:</h2>
 	  	{% for counter,title,students in full_list_idd %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -134,9 +141,10 @@ Students - {{ Department.dept_name }}
 		  </div>
 		</div>
 	  	{% endfor %}
- 
+      {% endif %}
 		<br>
 		<br>
+      {% if Department.ph_d %}
 	    <h2 id="phd">List of Ph.D Research Scholars:</h2>
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -175,6 +183,7 @@ Students - {{ Department.dept_name }}
 					  </td>
 					</tr>
 					{% endfor %}
+                  {% endif %}
 				  </tbody>
 				</table>
 			</div>
@@ -183,6 +192,5 @@ Students - {{ Department.dept_name }}
 
 	  </div><!--/#accordion1-->
 	</div><!--/.accordion-->
-  
-{% endblock %}
 
+{% endblock %}

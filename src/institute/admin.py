@@ -38,6 +38,7 @@ class HeadOfDepartmentAdmin(admin.ModelAdmin):
 
 class NotificationAdmin(admin.ModelAdmin):  
     prepopulated_fields = {'slug':('title',)}
+    list_filter = ['notif_of']
     #pass
 
 
