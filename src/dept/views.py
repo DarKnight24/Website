@@ -336,10 +336,6 @@ def publication(request, dept_code):
     return render(request,'dept_publications.html',context_dict)
 
 
-def viewerjs(request):
-    print '==================='
-    return render(request,'ViewerJS/index.html')
-
 def project(request, dept_code):
     try:
         dept = Department.objects.get(dept_code = dept_code)

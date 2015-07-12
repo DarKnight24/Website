@@ -24,7 +24,6 @@ urlpatterns = patterns('',
 	url(r'^department/(?P<dept_code>[\w\-]+)/contact/$',views.contact,name='contact'),
 	url(r'^department/(?P<dept_code>[\w\-]+)/notification/$',views.notification_all, name = 'dept_notific'),
     url(r'^department/(?P<dept_code>[\w\-]+)/notification/(?P<notif_title_slug>[\w\-]+)/$',views.notification, name = 'dept_notific_view'),
-    url(r'^/static/js/ViewerJS/$',views.viewerjs,name='viewerjs'),
 	
 	)
 
