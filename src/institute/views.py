@@ -136,4 +136,7 @@ def antiragging(request):
 def gallery(request):
     return render(request,'gallery.html')
 
+def rti(request):
+    return render(request, 'rti.html')
+
 
