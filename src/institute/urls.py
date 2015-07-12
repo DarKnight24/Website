@@ -8,4 +8,5 @@ urlpatterns = patterns('',
     url(r'^notification/(?P<notif_title_slug>[\w\-]+)/$',views.notification,name = 'notification'),
 	url(r'^notification/$',views.notification_all,name = 'index_notific'),
     url(r'^antiragging/$',views.antiragging,name = 'antiragging'),
+    url(r'^rti/$', views.rti, name = 'rti'),
 	)
