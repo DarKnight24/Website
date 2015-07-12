@@ -24,7 +24,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/static/images/ico/apple-touch-icon-57-precomposed.png">
-	
 </head><!--/head-->
 
 <body>
@@ -33,47 +32,17 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row">
-<<<<<<< HEAD
-                    <div class="col-sm-6 col-xs-4">
-                        {% if Department.contact1 %}
-                            <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
-                                {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
-                        {% endif %}
-                    </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                           <div class="login">
-                                <li><a href="#">Login (CAS)</a></li>
-                           </div>
-
-                       </div>
-                    </div>
-=======
                   <div class="col-xs-8">
                       {% if Department.contact1 %}
                           <div class="top-number"><p><i class="fa fa-phone-square"></i>+91{{ Department.contact1 }}
-                              {% if Department.contact2 %}, +91{{ Department.contact1 }} {% endif %}</p></div>
+                              {% if Department.contact2 %}&nbsp;&nbsp; +91{{ Department.contact1 }} {% endif %}</p></div>
                       {% endif %}
                   </div>
                   <div class="col-xs-4">
                          <div class="login pull-right">
-                              <li><a href="#">Login (CAS)</a></li>
+                                <li><a href="#">Login&nbsp;(CAS)</a></li>
                          </div>
                   </div>
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
                 </div>
             </div><!--/.container-->
         </div><!--/.top-bar-->
@@ -230,7 +199,7 @@
             </div>
         </div>
     </footer><!--/#footer-->
-	
+
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="/static/js/jquery.prettyPhoto.js"></script>
@@ -241,7 +210,7 @@
     <script src="/static/js/jquery.scrollTo.min.js"></script>
     <script src="/static/js/jquery.localScroll.js"></script>
     <script src="/static/js/jquery.localScroll.min.js"></script>
-	<script src="/static/js/notificationViewer.js"></script>
+    <script src="/static/js/notificationViewer.js"></script>
     <script>
         $(document).ready(
             function() {
@@ -260,7 +229,6 @@
     <script >
         $('#navbar').localScroll({duration: 600});
      </script>
-	 
 
 </body>
 </html>

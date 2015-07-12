@@ -39,14 +39,9 @@ Students - {{ Department.dept_name }}
 
 {% block table %}
 	<div class="accordion">
-<<<<<<< HEAD
-	  <div id = "accordion1" class="panel-group">  
-	  <h2 id="btech">List of B.Tech Students:</h2>
-=======
 	  <div id = "accordion1" class="panel-group">
 	  {% if Department.b_tech %}
 	  	<h2 id="btech">List of B.Tech Students:</h2>
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 	  	{% for counter,title,students in full_list_btech %}
 		<div class="panel panel-default">
 		  <div class="panel-heading">
@@ -91,7 +86,7 @@ Students - {{ Department.dept_name }}
 			</div>
 		  </div>
 		</div>
-	 tasd 	{% endfor %}
+	  {% endfor %}
 	  {% endif %}
 		<br>
 		<br>

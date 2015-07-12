@@ -2487,10 +2487,10 @@ ul.sidebar-gallery {
 
 }
 .home-profs .container{
-	width:105%;
+	width:108%;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-left: -60px;
+  margin-left: -75px;
   background-color: #f5f5f5;
 }
 
@@ -2658,8 +2658,8 @@ ul.sidebar-gallery {
 
 .blog .pub_wrap{
   height:100%;
-  width:110%;
-  margin-left: -50px;
+  width:113%;
+  margin-left: -65px;
 }
 
 .blog .row .publications_panel{
@@ -2731,11 +2731,7 @@ ul.sidebar-gallery {
   width:100%;
   height:30%;
   padding-left: 2px;
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 .blog .row .publications_panel .row .tile span  p{
   color:#fff;
   padding-left:5%;
@@ -2930,20 +2926,12 @@ shortcodes page css
   background-color: #FFF;
 }
 
-<<<<<<< HEAD
-.main-text h3 
-=======
 .main-text h3
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 {
   font-size: 13px;
 }
 
-<<<<<<< HEAD
-.main-text h1 
-=======
 .main-text h1
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 {
   font-size: 14px;
 }
@@ -2951,22 +2939,11 @@ shortcodes page css
 /*Panel Headings*/
 
 #panel-title {
-<<<<<<< HEAD
-  position: absolute;
-  display: block; 
-  float: left; 
-  width: 120px;
-  color: #fff;
-  padding: 11px 0px 1px 5px;
-  top: 0px;
-  left: 15px;
-=======
   display: block;
   float: left;
   width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -2976,22 +2953,11 @@ shortcodes page css
 }
 
 #panel-title2 {
-<<<<<<< HEAD
-  position: absolute;
-  display: block; 
-  float: left; 
-  width: 120px;
-  color: #fff;
-  padding: 11px 0px 1px 5px;
-  top: 88px;
-  left: 15px;
-=======
   display: block;
   float: left;
   width: 15%;
   color: #fff;
   padding: 11px 0px 1px 5px;
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
   border-top-left-radius: 7px;
   border-bottom-left-radius: 7px;
   background-color: #8B497E;
@@ -2999,88 +2965,6 @@ shortcodes page css
 #panel-title2 p{
   padding-left: 5px;
 }
-<<<<<<< HEAD
-
-
-#panel-title3 {
-  position: absolute;
-  display: block; 
-  float: left; 
-  width: 120px;
-  color: #fff;
-  padding: 11px 0px 1px 5px;
-  top: 176px;
-  left: 15px;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  background-color: #8B497E;
-}
-#panel-title3 p{
-  padding-left: 5px;
-}
-
-#panel-title4 {
-  position: absolute;
-  display: block; 
-  float: left; 
-  width: 120px;
-  color: #fff;
-  padding: 11px 0px 1px 5px;
-  top: 264px;
-  left: 15px;
-  border-top-left-radius: 7px;
-  border-bottom-left-radius: 7px;
-  background-color: #8B497E;
-}
-#panel-title4 p{
-  padding-left: 5px;
-}
-
-/* News Ticker */
-#ticker_container {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  overflow: auto;
-}
-#ticker_container2 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  overflow: auto;
-}
-#ticker_container3 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  overflow: auto;
-}
-#ticker_container4 {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  background: #FFFFFF;
-  padding: 10px;
-  border: 1px solid #343434;
-  -webkit-border-radius: 7px;
-  -moz-border-radius: 7px;
-  border-radius: 7px;
-  overflow: auto;
-}
-
-
-=======
->>>>>>> 92843d05d620ba2e30a188af1605c1ef6597705e
 
 
 #panel-title3 {
@@ -3143,21 +3027,4 @@ shortcodes page css
   -moz-border-radius: 7px;
   border-radius: 7px;
   overflow: auto;
-}
-
-/*notifcation pdf viwer modal*/
-.iframe-container {    
-    padding-bottom: 60%;
-	width: 100%;
-    padding-top: 30px; height: 0; overflow: hidden;
-}
- 
-.iframe-container iframe,
-.iframe-container object,
-.iframe-container embed {
-    position: absolute;
-    top: 0;
-	width:100%;
-    left: 0;
-    height: 100%;
 }

@@ -307,7 +307,6 @@ def research(request, dept_code):
         z = zip(sv_list,counter)
         names = list()
         for i,j in z:
-            print i,j
             s = "sv"+j
             context_dict[s] = PhdResearch.objects.filter(dept = dept_code, supervisor = i)
             names.append(context_dict[s])
@@ -336,6 +335,10 @@ def publication(request, dept_code):
     context_dict['RandomColor'] = RandomColor()
     return render(request,'dept_publications.html',context_dict)
 
+
+def viewerjs(request):
+    print '==================='
+    return render(request,'ViewerJS/index.html')
 
 def project(request, dept_code):
     try:
