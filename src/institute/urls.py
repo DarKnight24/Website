@@ -9,4 +9,5 @@ urlpatterns = patterns('',
 	url(r'^notification/$',views.notification_all,name = 'index_notific'),
     url(r'^antiragging/$',views.antiragging,name = 'antiragging'),
     url(r'^rti/$', views.rti, name = 'rti'),
+    url(r'^institute/various_committees/$', views.committee, name='committees'),
 	)

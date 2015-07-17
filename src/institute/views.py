@@ -113,16 +113,16 @@ def adminis_view(request,rank):
 
 def committee(request):
     try:
-        commit = Committee.objects.get().order_by(comm_id)
+        commit = Committee.objects.filter().order_by("comm_id")
         context_dict['committees']= commit
     except:
         return HttpResponse("Failed to retrieve data .")
     return render(request, 'committee.html',context_dict)
 
 
-def committee_view(request):
+def committee_view(request, c_id=None):
     try:
-        c_view = CommDetail.object.filter(comm_id = c_id )  
+        c_view = Committee.object.get(comm_id = c_id )
         context_dict['committs'] = c_view
     except:
         raise Http404

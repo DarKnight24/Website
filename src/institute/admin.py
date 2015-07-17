@@ -19,8 +19,7 @@ class instituteAdmin(admin.ModelAdmin):
         model = SeminarsConf
         model = Event
         model = Tender
-        #model = Committee
-        model = CommDetail
+        model = Committee
         model = AdminOfficial
         model = BoardOfGovernor
         #model = HostelAdmin
@@ -70,6 +69,10 @@ class CourseAdmin(admin.ModelAdmin):
 class DepartmentFilter(admin.ModelAdmin):
     list_filter = ['dept']
 
+
+class PostAdmin(admin.ModelAdmin):
+    list_filter = ['group', 'post_hold_by']
+
 admin.site.register(Department, DepartmentHomepage)
 admin.site.register(Faculty, FacultyAdmin)
 admin.site.register(Student)
@@ -82,13 +85,11 @@ admin.site.register(Image, instituteAdmin)
 admin.site.register(SeminarsConf, instituteAdmin)
 admin.site.register(Event, instituteAdmin)
 admin.site.register(Tender, instituteAdmin)
-#admin.site.register(Committee, instituteAdmin)
-admin.site.register(Groups, instituteAdmin)
-admin.site.register(Post, instituteAdmin)
+admin.site.register(Committee, instituteAdmin)
+admin.site.register(Post, PostAdmin)
 admin.site.register(StudentsPost, instituteAdmin)
 admin.site.register(FacultiesPost, instituteAdmin)
 admin.site.register(StaffsPost, instituteAdmin)
-admin.site.register(CommDetail, instituteAdmin)
 admin.site.register(AdminOfficial, instituteAdmin)
 admin.site.register(BoardOfGovernor, instituteAdmin)
 #admin.site.register(HostelAdmin, instituteAdmin)

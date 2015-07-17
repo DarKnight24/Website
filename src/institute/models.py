@@ -41,11 +41,6 @@ def __get_path_tenders__(instance, filename):
         os.makedirs(upload_dir)
     return os.path.join(upload_dir, filename)
 
-def __get_path_committees__(instance, filename):
-    upload_dir = os.path.join(MEDIA_ROOT_DOCUMENTS,'Committees')
-    if not os.path.exists(upload_dir):
-        os.makedirs(upload_dir)
-    return os.path.join(upload_dir, filename)
 
 def __get_path_directors__(instance, filename):
     getRankName = instance.rank_id.rank_name
@@ -241,16 +236,6 @@ class Committee(models.Model):
 """
 
 
-class CommDetail(models.Model):
-    comm_id = models.IntegerField(null = False, blank = False)
-    comm_for = models.CharField(max_length = 100, null = True, blank = True)
-    notif_no = models.CharField(max_length = 100, null = True, blank = True, verbose_name="Notification number")
-    dated = models.CharField(max_length = 100, null = True, blank = True)
-    comm_doc = models.FileField(upload_to = __get_path_committees__, default = 'null')
-    comm_img = models.ImageField(upload_to = __get_path_committees__, default = 'null')
-
-    def __unicode__(self):
-        return smart_unicode(self.notif_no)
 
 
 class AdminOfficial(models.Model):

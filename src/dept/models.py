@@ -19,6 +19,11 @@ def __get_path_faculty__(instance, filename):
         os.makedirs(upload_dir)
     return os.path.join(upload_dir, filename)
 
+def __get_path_committees__(instance, filename):
+    upload_dir = os.path.join(MEDIA_ROOT_DOCUMENTS,'Committees')
+    if not os.path.exists(upload_dir):
+        os.makedirs(upload_dir)
+    return os.path.join(upload_dir, filename)
 
 # Create your models here.
 
@@ -123,9 +128,14 @@ class Staff(models.Model):
         return smart_unicode(self.name)+' : '+smart_unicode(self.email)
 
 
-class Groups(models.Model):
+class Committee(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
-    short = models.CharField(max_length=10, unique=True, blank=False, null=False)
+    comm_id = models.IntegerField(null = False, blank = False, verbose_name="committee ID")
+    short = models.CharField(max_length=10, unique=True, blank=False, null=False, verbose_name="Short Form")
+    notif_no = models.CharField(max_length = 100, null = True, blank = True, verbose_name="Notification number")
+    dated = models.CharField(max_length = 100, null = True, blank = True)
+    comm_doc = models.FileField(upload_to = __get_path_committees__, default = 'null', verbose_name="Notification Document")
+    comm_img = models.ImageField(upload_to = __get_path_committees__, default = 'null', verbose_name="Notification Image")
     description = models.CharField(max_length=250, blank=True, null=True)
 
     def __unicode__(self):
@@ -140,7 +150,7 @@ class Post(models.Model):
             ('4','Others'),
     }
     name = models.CharField(max_length=50)
-    group = models.ForeignKey(Groups)
+    group = models.ForeignKey(Committee)
     post_hold_by = models.CharField(max_length=5, choices=PEOPLE)
 
     def __unicode__(self):
