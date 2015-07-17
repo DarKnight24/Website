@@ -2487,10 +2487,10 @@ ul.sidebar-gallery {
 
 }
 .home-profs .container{
-	width:105%;
+	width:108%;
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-left: -60px;
+  margin-left: -75px;
   background-color: #f5f5f5;
 }
 
@@ -2658,8 +2658,8 @@ ul.sidebar-gallery {
 
 .blog .pub_wrap{
   height:100%;
-  width:110%;
-  margin-left: -50px;
+  width:113%;
+  margin-left: -65px;
 }
 
 .blog .row .publications_panel{
@@ -3027,4 +3027,22 @@ shortcodes page css
   -moz-border-radius: 7px;
   border-radius: 7px;
   overflow: auto;
+}
+
+
+/*notifcation pdf viwer modal*/
+.iframe-container {    
+    padding-bottom: 60%;
+  width: 100%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.iframe-container iframe,
+.iframe-container object,
+.iframe-container embed {
+    position: absolute;
+    top: 0;
+  width:100%;
+    left: 0;
+    height: 100%;
 }

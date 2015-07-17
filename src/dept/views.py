@@ -307,7 +307,6 @@ def research(request, dept_code):
         z = zip(sv_list,counter)
         names = list()
         for i,j in z:
-            print i,j
             s = "sv"+j
             context_dict[s] = PhdResearch.objects.filter(dept = dept_code, supervisor = i)
             names.append(context_dict[s])
