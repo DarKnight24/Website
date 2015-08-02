@@ -198,6 +198,24 @@ body > section {
   margin-left: 0;
 }
 
+.navbar-heading1{
+  float: right;
+  padding-left: 20px;
+  padding-top: 40px;
+  /*width: 80%;*/
+}
+.navbar-heading2{
+  float: right;
+  padding-left: 20px;
+  padding-top: 20px;
+  /*width: 80%;*/
+}
+
+.navbar-heading1>a:hover{
+  text-decoration: none;
+  color: #8B497E;
+}
+
 .top-bar {
   padding: 10px 0;
   background: #8B497E;
@@ -291,7 +309,7 @@ input.search-form:hover {
  }
 
 .navbar-nav>li{
-  margin-left: 5px;
+  margin-left:22px;
   padding-bottom: 28px;
 }
 
